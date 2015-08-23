@@ -17,6 +17,6 @@ Further development:
 - image previewert
 
 Screenshots, version from 23.08.2015:
-![alt tag](https://drive.google.com/open?id=0B3wQ0XRTzITuSDZpVVpLSFRGdzQ)
+![alt tag](https://lh3.googleusercontent.com/rlxpWEsOpteU5wAeKBJVWd1vj6ehgblSR2xSVKnAxhJzxOm52wRuS3XrrIgZ_rgwlDVP3ABAiMuE-IY=w1890-h840)
 ![alt tag](https://drive.google.com/open?id=0B3wQ0XRTzITuVWFtaVlrTW1TejQ)
 ![alt tag](https://drive.google.com/open?id=0B3wQ0XRTzITuaDU1X3lDQ29pdnM)
