@@ -1,6 +1,19 @@
 # GalleryPicker
 GaleeryPicker allows to pick up photo previously sorted by folders. 
 
+ <table style="width:100%">
+  <tr>
+    <td>Jill</td>
+    <td>Smith</td>
+    <td>50</td>
+  </tr>
+  <tr>
+    <td>Eve</td>
+    <td>Jackson</td>
+    <td>94</td>
+  </tr>
+</table> 
+
 <b>Screenshots, version from 23.08.2015:</b> 
 <br>
 ![alt tag](https://lh3.googleusercontent.com/3qez1DVBv-gzLPk9cBnkTkMr60F8STWSyuPkRbs_iUDd99jg9U6MByLxanZm4JfojsBcBSPzavfmQLI=w1890-h840)
