@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.Rect;
 import android.os.Bundle;
 
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.DisplayMetrics;
@@ -17,7 +18,6 @@ import java.io.FilenameFilter;
 import java.util.ArrayList;
 
 import ua.pb.gallery.adapters.GalleryPhotosRecyclerAdapter;
-import ua.pb.gallery.adapters.GridLayoutManager;
 import ua.pb.gallery.models.PhotoEntity;
 
 /**
@@ -76,18 +76,11 @@ public class AcGalleryPhotos extends Activity {
 
         activity = this;
 
-        setContentView(R.layout.gallery_photo_viewer_layer);
+        setContentView(R.layout.gallery_recycler_layout);
         photosRecyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
 
-        DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
-
-        float dpHeight = displayMetrics.heightPixels / displayMetrics.density;
-        float dpWidth = displayMetrics.widthPixels / displayMetrics.density;
-
-        int rowNumber = (int)dpHeight / (displayMetrics.density <= 1.5f ? 200 : 400 );
-
-        photosRecyclerView.setLayoutManager(gridLayoutManager = new GridLayoutManager(activity, rowNumber, LinearLayoutManager.HORIZONTAL));
-
+        gridLayoutManager = new GridLayoutManager(activity, 2, LinearLayoutManager.VERTICAL, false);
+        gridLayoutManager.setSmoothScrollbarEnabled(true);
 
         adapter = new GalleryPhotosRecyclerAdapter(new GalleryPhotosRecyclerAdapter.OnItemClickListener() {
             @Override
@@ -97,6 +90,7 @@ public class AcGalleryPhotos extends Activity {
         }, photos = getPhotos(folderPath), activity);
 
         photosRecyclerView.setAdapter(adapter);
+        photosRecyclerView.setLayoutManager(gridLayoutManager);
 
         //todo: make adapter
     }

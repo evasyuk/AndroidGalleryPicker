@@ -8,10 +8,15 @@ import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewTreeObserver;
 import android.view.Window;
+import android.widget.EditText;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import java.io.File;
@@ -28,6 +33,7 @@ public class AcGalleryFolders extends Activity {
     public static final String FOLDERS_KEY = "FOLDERS_KEY_";
 
     private RecyclerView foldersRecyclerView;
+    private GridLayoutManager gridLayoutManager;
 
     private Activity activity;
 
@@ -91,6 +97,9 @@ public class AcGalleryFolders extends Activity {
 
     private void setupLayout(final ArrayList<FolderEntity> list) {
         setContentView(R.layout.gallery_recycler_layout);
+        initActionBar();
+        initFloatActionButton();
+        initSearchField();
         foldersRecyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
 
         final GalleryFoldersRecyclerAdapter adapter = new GalleryFoldersRecyclerAdapter(new GalleryFoldersRecyclerAdapter.OnItemClickListener() {
@@ -101,16 +110,146 @@ public class AcGalleryFolders extends Activity {
             }
         }, list, this);
 
-        DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
-
-        float dpHeight = displayMetrics.heightPixels / displayMetrics.density;
-        float dpWidth = displayMetrics.widthPixels / displayMetrics.density;
-
-        int rowNumber = (int)dpHeight / (displayMetrics.density <= 1.5f ? 200 : 400 );
+        gridLayoutManager = new GridLayoutManager(activity, 2, LinearLayoutManager.VERTICAL, false);
+        gridLayoutManager.setSmoothScrollbarEnabled(true);
 
         foldersRecyclerView.setAdapter(adapter);
-        foldersRecyclerView.setLayoutManager(new GridLayoutManager(activity, rowNumber, LinearLayoutManager.HORIZONTAL, false));
+        foldersRecyclerView.setLayoutManager(gridLayoutManager);
 
+        foldersRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+                CURRENT_ACTION_BAR_HEIGHT += dy;
+
+
+                if (CURRENT_ACTION_BAR_HEIGHT < 0) {
+                    CURRENT_ACTION_BAR_HEIGHT = 0;
+                }
+
+                if (CURRENT_ACTION_BAR_HEIGHT > MAX_ACTION_BAR_HEIGHT) {
+                    CURRENT_ACTION_BAR_HEIGHT = MAX_ACTION_BAR_HEIGHT;
+                }
+
+                applyNewMargin(CURRENT_ACTION_BAR_HEIGHT);
+            }
+        });
+        foldersRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+                CURRENT_FAB_HEIGHT += dy;
+
+
+                if (CURRENT_FAB_HEIGHT < 0) {
+                    CURRENT_FAB_HEIGHT = 0;
+
+                    //disable search
+                    //needToShowSearchField = false;
+                    //searchFilterField.setVisibility(View.GONE);
+                }
+
+                if (CURRENT_FAB_HEIGHT > MAX_FAB_HEIGHT + FAB_BOTTOM_MARGIN) {
+                    CURRENT_FAB_HEIGHT = MAX_FAB_HEIGHT + FAB_BOTTOM_MARGIN;
+                }
+
+                applyNewFABHeight(CURRENT_FAB_HEIGHT);
+
+                android.util.Log.e("ALPHA", "CURRENT_FAB_HEIGHT=" + CURRENT_FAB_HEIGHT +
+                        " MAX_FAB_HEIGHT + FAB_BOTTOM_MARGIN = " + (MAX_FAB_HEIGHT + FAB_BOTTOM_MARGIN) +
+                        " alpha=" + (CURRENT_FAB_HEIGHT / (MAX_FAB_HEIGHT + FAB_BOTTOM_MARGIN)));
+                applySearchFieldAlpha( 1 - (float)CURRENT_FAB_HEIGHT/(float)(MAX_FAB_HEIGHT + FAB_BOTTOM_MARGIN));
+            }
+        });
+
+    }
+
+    LinearLayout actionBar;
+    int CURRENT_ACTION_BAR_HEIGHT;
+    int MAX_ACTION_BAR_HEIGHT;
+    private void applyNewMargin(int height) {
+        RelativeLayout.LayoutParams lParams = (RelativeLayout.LayoutParams)actionBar.getLayoutParams();
+        lParams.setMargins(0, -height, 0, 0);
+
+        actionBar.setLayoutParams(lParams);
+    }
+    private void initActionBar() {
+        actionBar = (LinearLayout) findViewById(R.id.header_tool);
+
+        actionBar.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+            @Override
+            public void onGlobalLayout() {
+                MAX_ACTION_BAR_HEIGHT = actionBar.getHeight();
+                if (MAX_ACTION_BAR_HEIGHT == 0) {
+                    MAX_ACTION_BAR_HEIGHT = actionBar.getMeasuredHeight();
+                }
+
+                actionBar.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+            }
+        });
+    }
+
+    ImageView floatActionButton;
+    int CURRENT_FAB_HEIGHT;
+    int MAX_FAB_HEIGHT;
+    int FAB_BOTTOM_MARGIN = 15;
+    int FAB_RIGHT_MARGIN = 15;
+    private void initFloatActionButton() {
+        floatActionButton = (ImageView) findViewById(R.id.floatActionButton);
+
+        floatActionButton.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+            @Override
+            public void onGlobalLayout() {
+                MAX_FAB_HEIGHT = floatActionButton.getHeight();
+                if (MAX_FAB_HEIGHT == 0) {
+                    MAX_FAB_HEIGHT = floatActionButton.getMeasuredHeight();
+                }
+
+                floatActionButton.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+            }
+        });
+        floatActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (needToShowSearchField)
+                    searchFilterField.setVisibility(View.VISIBLE);
+                else
+                    searchFilterField.setVisibility(View.GONE);
+
+                needToShowSearchField = !needToShowSearchField;
+            }
+        });
+    }
+
+    private void applyNewFABHeight(int height) {
+        RelativeLayout.LayoutParams lParams = (RelativeLayout.LayoutParams)floatActionButton.getLayoutParams();
+        lParams.setMargins(0, 0, FAB_RIGHT_MARGIN, -height);
+
+        floatActionButton.setLayoutParams(lParams);
+    }
+
+    RelativeLayout searchFilterField;
+    EditText searchPhoto;
+    float CURRENT_SEARCH_FIELD_ALPHA;//remove?
+    boolean needToShowSearchField;
+    private void initSearchField() {
+        searchFilterField = (RelativeLayout) findViewById(R.id.searchFilterField);
+        searchPhoto = (EditText) findViewById(R.id.editText);
+        //todo: add on inputListener
+    }
+    private void enableSearchFilterSection() {
+        needToShowSearchField = true;
+        searchFilterField.setVisibility(View.VISIBLE);
+    }
+    private void applySearchFieldAlpha(float alpha) {
+        android.util.Log.e("ALPHA_ALPHA", "" + alpha);
+        searchFilterField.setAlpha(alpha);
+    }
+
+
+    ImageView changeGrid;
+    private void initGridChanging() {
+        changeGrid = (ImageView) findViewById(R.id.changeGridImageView);
     }
 
     private void showDialogAndDismiss(String reason) {

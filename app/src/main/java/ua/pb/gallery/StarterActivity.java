@@ -42,6 +42,8 @@ public class StarterActivity extends Activity {
                 .imageScaleType(ImageScaleType.IN_SAMPLE_INT) // default
                 .bitmapConfig(Bitmap.Config.ARGB_8888) // default
                 .displayer(new SimpleBitmapDisplayer()) // default
+                .cacheInMemory(true)
+                .cacheOnDisk(true)
                 .build();
 
         // Create global configuration and initialize ImageLoader with this config
