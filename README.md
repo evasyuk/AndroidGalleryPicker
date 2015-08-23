@@ -1,7 +1,8 @@
 # GalleryPicker
 GaleeryPicker allows to pick up photo previously sorted by folders. 
 
-<b>Screenshots, version from 23.08.2015:</b>
+<b>Screenshots, version from 23.08.2015:</b> 
+<br>
 ![alt tag](https://lh3.googleusercontent.com/3qez1DVBv-gzLPk9cBnkTkMr60F8STWSyuPkRbs_iUDd99jg9U6MByLxanZm4JfojsBcBSPzavfmQLI=w1890-h840)
 
 ![alt tag](https://lh5.googleusercontent.com/2HhJJIY0Y3zDkLKLHWNQTid49txdSuam4jGHrJpHk8SgjTUoa1yGYpOlSX83v_Nf50mSU_mXXeX_HoY=w1890-h840)
