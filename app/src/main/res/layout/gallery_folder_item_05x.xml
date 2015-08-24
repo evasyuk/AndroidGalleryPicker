@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
-              android:layout_width="400dp"
-              android:layout_height="400dp"
+    android:orientation="vertical"
+    android:layout_width="100dp"
+    android:layout_height="100dp"
     android:id="@+id/container">
 
     <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/imageView"
         android:src="@mipmap/ic_placeholder"
         android:minHeight="200dp"
         android:minWidth="200dp"
         android:scaleType="centerCrop" />
     <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:layout_alignBottom="@+id/imageView"
-            android:layout_alignLeft="@+id/imageView" android:layout_alignRight="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:layout_alignBottom="@+id/imageView"
+        android:layout_alignLeft="@+id/imageView" android:layout_alignRight="@+id/imageView"
         android:layout_gravity="bottom">
 
         <RelativeLayout
@@ -35,32 +35,32 @@
             android:alpha="0.65"></RelativeLayout>
 
         <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="DCIM"
-                android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DCIM"
+            android:id="@+id/textView"
             android:singleLine="true"
             android:textColor="#ffffff"
             android:layout_marginLeft="5dp"
             android:layout_below="@+id/relativeLayout"
             android:textSize="18dp" />
         <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content" android:layout_below="@+id/textView"
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" android:layout_below="@+id/textView"
             android:id="@+id/temp_id_g354">
             <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Photos: "
-                    android:id="@+id/textView2" android:layout_below="@+id/textView" android:textSize="14dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Photos: "
+                android:id="@+id/textView2" android:layout_below="@+id/textView" android:textSize="14dp"
                 android:textColor="#ffffff"
                 android:layout_marginLeft="5dp" />
             <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0"
-                    android:id="@+id/textView3" android:textSize="14dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:id="@+id/textView3" android:textSize="14dp"
                 android:textColor="#ffffff" />
         </LinearLayout>
 
@@ -71,4 +71,4 @@
             android:layout_below="@+id/temp_id_g354"></RelativeLayout>
 
     </RelativeLayout>
-</FrameLayout><!-- From: file:/home/user/StudioProjects/gallery/app/src/main/res/layout-xlarge/gallery_folder_item.xml -->
+</FrameLayout>

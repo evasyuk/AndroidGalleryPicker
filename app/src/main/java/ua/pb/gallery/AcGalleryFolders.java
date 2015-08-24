@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewTreeObserver;
@@ -22,6 +24,7 @@ import android.widget.Toast;
 import java.io.File;
 import java.util.ArrayList;
 
+import ua.pb.gallery.adapters.FilterInterface;
 import ua.pb.gallery.adapters.GalleryFoldersRecyclerAdapter;
 import ua.pb.gallery.models.FolderEntity;
 
@@ -34,6 +37,10 @@ public class AcGalleryFolders extends Activity {
 
     private RecyclerView foldersRecyclerView;
     private GridLayoutManager gridLayoutManager;
+    private GalleryFoldersRecyclerAdapter recyclerAdapter;
+    private FilterInterface filterInterface;
+
+    private ArrayList<FolderEntity> list;
 
     private Activity activity;
 
@@ -95,14 +102,23 @@ public class AcGalleryFolders extends Activity {
         startActivityForResult(startAcGalleryPhoto, Utils.REQUEST_PICK_IMAGE);
     }
 
+    //---------------------------------------------------------------------------------------------/
     private void setupLayout(final ArrayList<FolderEntity> list) {
         setContentView(R.layout.gallery_recycler_layout);
         initActionBar();
         initFloatActionButton();
         initSearchField();
+        initGridChanging();
         foldersRecyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
 
-        final GalleryFoldersRecyclerAdapter adapter = new GalleryFoldersRecyclerAdapter(new GalleryFoldersRecyclerAdapter.OnItemClickListener() {
+        this.list = list;
+
+        createRecyclerView(list, true);
+
+    }
+
+    private void createRecyclerView (final ArrayList<FolderEntity> list, boolean isDualSpan) {
+        recyclerAdapter = new GalleryFoldersRecyclerAdapter(new GalleryFoldersRecyclerAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
                 Toast.makeText(activity, "position=" + position, Toast.LENGTH_SHORT).show();
@@ -110,10 +126,15 @@ public class AcGalleryFolders extends Activity {
             }
         }, list, this);
 
-        gridLayoutManager = new GridLayoutManager(activity, 2, LinearLayoutManager.VERTICAL, false);
+        recyclerAdapter.changeLayoutSpanType(!isDualSpan);
+
+        filterInterface = recyclerAdapter;
+
+        gridLayoutManager = new GridLayoutManager(activity, isDualSpan ? 2 : 4, LinearLayoutManager.VERTICAL, false);
         gridLayoutManager.setSmoothScrollbarEnabled(true);
 
-        foldersRecyclerView.setAdapter(adapter);
+
+        foldersRecyclerView.setAdapter(recyclerAdapter);
         foldersRecyclerView.setLayoutManager(gridLayoutManager);
 
         foldersRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
@@ -161,9 +182,11 @@ public class AcGalleryFolders extends Activity {
                 applySearchFieldAlpha( 1 - (float)CURRENT_FAB_HEIGHT/(float)(MAX_FAB_HEIGHT + FAB_BOTTOM_MARGIN));
             }
         });
-
     }
+    /**********************************************************************************************/
+    /**********************************************************************************************/
 
+    //---------------------------------------------------------------------------------------------/
     LinearLayout actionBar;
     int CURRENT_ACTION_BAR_HEIGHT;
     int MAX_ACTION_BAR_HEIGHT;
@@ -188,7 +211,38 @@ public class AcGalleryFolders extends Activity {
             }
         });
     }
+    //---------------------------------------------------------------------------------------------/
+    ImageView changeGrid;
+    boolean isDualSpan = true;
+    private void initGridChanging() {
+        changeGrid = (ImageView) findViewById(R.id.changeGridImageView);
+        changeGrid.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                isDualSpan = !isDualSpan;
+                createRecyclerView(list, isDualSpan);
+            }
+        });
+    }
 
+    private void showDialogAndDismiss(String reason) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+        builder.setTitle(reason);
+        builder.setIcon(R.drawable.ic_launcher);
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                finish();
+            }
+        });
+
+        builder.create().show();
+    }
+    /**********************************************************************************************/
+    /**********************************************************************************************/
+
+    //---------------------------------------------------------------------------------------------/
     ImageView floatActionButton;
     int CURRENT_FAB_HEIGHT;
     int MAX_FAB_HEIGHT;
@@ -227,43 +281,39 @@ public class AcGalleryFolders extends Activity {
 
         floatActionButton.setLayoutParams(lParams);
     }
+    /**********************************************************************************************/
+    /**********************************************************************************************/
 
+    //---------------------------------------------------------------------------------------------/
     RelativeLayout searchFilterField;
     EditText searchPhoto;
-    float CURRENT_SEARCH_FIELD_ALPHA;//remove?
     boolean needToShowSearchField;
     private void initSearchField() {
         searchFilterField = (RelativeLayout) findViewById(R.id.searchFilterField);
         searchPhoto = (EditText) findViewById(R.id.editText);
         //todo: add on inputListener
+        searchPhoto.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {/**/}
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {/**/}
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                filterInterface.applyFilter(s.toString());
+            }
+        });
     }
     private void enableSearchFilterSection() {
         needToShowSearchField = true;
         searchFilterField.setVisibility(View.VISIBLE);
     }
+
     private void applySearchFieldAlpha(float alpha) {
-        android.util.Log.e("ALPHA_ALPHA", "" + alpha);
         searchFilterField.setAlpha(alpha);
     }
+    /**********************************************************************************************/
+    /**********************************************************************************************/
 
-
-    ImageView changeGrid;
-    private void initGridChanging() {
-        changeGrid = (ImageView) findViewById(R.id.changeGridImageView);
-    }
-
-    private void showDialogAndDismiss(String reason) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-
-        builder.setTitle(reason);
-        builder.setIcon(R.drawable.ic_launcher);
-        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                finish();
-            }
-        });
-
-        builder.create().show();
-    }
 }
