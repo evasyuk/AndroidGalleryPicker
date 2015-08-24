@@ -14,6 +14,25 @@ GaleeryPicker allows to pick up photo previously sorted by folders.
   </tr>
 </table> 
 
+<b>Screenshots, version from 24.08.2015:</b> 
+<br>
+Added:
+- filtering
+- rough span count changing
+Found issues:
+- outOfMemooryException -> preformance issues
+- grid span changing changes whole RecyclerView -> filtering and scroll position is being lost each time
+<br>
+
+ <table style="width:100%">
+  <tr>
+    <td>![alt tag](https://lh4.googleusercontent.com/FtdLAXzEgXI4up6nNils9c0R7tbjH2myGDix5c2RLXEm7Nhvq4JNZJvi38pcXtV8KGAJVFCRkJ3gzco=w1890-h840)</td>
+    <td>![alt tag](https://lh6.googleusercontent.com/5OPR9uSknbBXiLcMV1X4fnXU1C1xPuklUofSdKOsVjYHDbf-J9ScI0DRnBrdZEBUjZa-NKwHg75c5vk=w1890-h840)</td>
+    <td>![alt tag](https://lh3.googleusercontent.com/n0qrtDwsQ3nDInwWwvi9R9ip0Xocd-68skIxH10u8Dmoqmd0ML88P64O6XPyCjDjdHxAGRe1qbha3w8=w1890-h840)</td>
+  </tr>
+</table> 
+
+
 
 Made of:
 - recycler view
