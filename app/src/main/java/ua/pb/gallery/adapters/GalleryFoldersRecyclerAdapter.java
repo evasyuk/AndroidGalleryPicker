@@ -13,6 +13,9 @@ import android.widget.TextView;
 import java.io.File;
 import java.io.FilenameFilter;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 
 import ua.pb.gallery.R;
 import ua.pb.gallery.Utils;
@@ -36,8 +39,37 @@ public class GalleryFoldersRecyclerAdapter extends RecyclerView.Adapter<GalleryF
 
     private boolean isDualSpan;
 
+    private static Comparator<FolderEntity> ALPHABETICAL_ORDER = new Comparator<FolderEntity>() {
+        public int compare(FolderEntity str1, FolderEntity str2) {
+            int res = String.CASE_INSENSITIVE_ORDER.compare(str1.getFolder().getName(), str2.getFolder().getName());
+            if (res == 0) {
+                res = str1.getFolder().getName().compareTo(str2.getFolder().getName());
+            }
+            return res;
+        }
+    };
+
+    private static Comparator<FolderEntity> TIME_ORDER = new Comparator<FolderEntity>() {
+        public int compare(FolderEntity str1, FolderEntity str2) {
+
+            long res = str1.getFolder().lastModified() - str2.getFolder().lastModified();
+
+            return (int)res;
+        }
+    };
+
     public void changeLayoutSpanType(boolean isDualSpan) {
         this.isDualSpan = isDualSpan;
+    }
+
+    public void sortAlphabeticAscending() {
+        Collections.sort(filteredList, ALPHABETICAL_ORDER);
+        notifyDataSetChanged();
+    }
+
+    public void sortTimeAsceniding() {
+        Collections.sort(filteredList, TIME_ORDER);
+        notifyDataSetChanged();
     }
 
     public GalleryFoldersRecyclerAdapter(OnItemClickListener onItemClickedCallback, ArrayList<FolderEntity> originList, Activity activity) {
@@ -85,10 +117,20 @@ public class GalleryFoldersRecyclerAdapter extends RecyclerView.Adapter<GalleryF
         File[] innerPhotos = entity.getFolder().listFiles(picturesfilter);
         folderViewHolder.photosCount.setText("" + innerPhotos.length);
         if (innerPhotos.length > 0) {
-            Utils.IMAGE_LOADER.displayImage(Utils.FILE + innerPhotos[0].getAbsolutePath(), folderViewHolder.folderCover);
+            Utils.IMAGE_LOADER.displayImage(Utils.FILE + findLastOne(innerPhotos).getAbsolutePath(), folderViewHolder.folderCover);
         }
         else
             Utils.IMAGE_LOADER.displayImage(Utils.DRAWABLE + R.drawable.ic_launcher, folderViewHolder.folderCover);
+    }
+
+    private File findLastOne(File[] list) {
+        File temp = list[0];
+        for (int index = 1; index < list.length; index++) {
+            if (list[index].lastModified() >= temp.lastModified()) {
+                temp = list[index];
+            }
+        }
+        return temp;
     }
 
     class FolderViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {

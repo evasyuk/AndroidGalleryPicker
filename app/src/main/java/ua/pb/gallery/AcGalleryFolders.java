@@ -14,15 +14,19 @@ import android.util.Log;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.view.Window;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.List;
 
 import ua.pb.gallery.adapters.FilterInterface;
 import ua.pb.gallery.adapters.GalleryFoldersRecyclerAdapter;
@@ -109,6 +113,7 @@ public class AcGalleryFolders extends Activity {
         initFloatActionButton();
         initSearchField();
         initGridChanging();
+        setupSpinner();
         foldersRecyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
 
         this.list = list;
@@ -238,6 +243,37 @@ public class AcGalleryFolders extends Activity {
         });
 
         builder.create().show();
+    }
+
+    Spinner spinner;
+    int currentlyChosen;
+    private void setupSpinner() {
+        spinner = (Spinner) findViewById(R.id.spinner);
+        List<String> list = new ArrayList<String>();
+        list.add("Alphabetic");
+        list.add("Time");
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_item, list);
+        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(dataAdapter);
+
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                if (position == currentlyChosen)
+                    return;
+                if (position == 0) {
+                    recyclerAdapter.sortAlphabeticAscending();
+                } else if (position == 1) {
+                    recyclerAdapter.sortTimeAsceniding();
+                }
+                currentlyChosen = position;
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {/**/}
+        });
     }
     /**********************************************************************************************/
     /**********************************************************************************************/
