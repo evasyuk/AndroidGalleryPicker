@@ -109,8 +109,9 @@ public class StarterActivity extends Activity {
     }
 
     private void startNextAcivity(ArrayList<String> list) {
-        Intent intent = new Intent(StarterActivity.this, AcGalleryFolders.class);
-        intent.putStringArrayListExtra(AcGalleryFolders.FOLDERS_KEY, list);
+        Intent intent = new Intent(StarterActivity.this, AcFolders.class);
+        intent.putStringArrayListExtra(Utils.FOLDERS_KEY, list);
+        intent.putExtra(AcGalleryBasic.IS_FOLDER_MODE_KEY, true);
         startActivityForResult(intent, Utils.REQUEST_PICK_FOLDER);
     }
 

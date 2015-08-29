@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.io.File;
@@ -110,7 +111,7 @@ public class GalleryFoldersRecyclerAdapter extends RecyclerView.Adapter<GalleryF
 
     @Override
     public void onBindViewHolder(FolderViewHolder folderViewHolder, int i) {
-        Log.d("Recycler", "onBindViewHolder(FolderViewHolder, int) index = " + i);
+        Log.d("Recycler", "onBindViewHolder(FileItemHolderView, int) index = " + i);
         FolderEntity entity = filteredList.get(i);
         folderViewHolder.folderName.setText(entity.getFolder().getName());
 

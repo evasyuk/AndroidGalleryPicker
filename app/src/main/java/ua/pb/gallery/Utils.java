@@ -8,6 +8,8 @@ import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
  */
 public class Utils {
 
+    public static final String FOLDERS_KEY = "FOLDERS_KEY_";
+
     public static final String FILE = "file://";
     public static final String DRAWABLE = "drawable://";
     public static final String ASSETS = "assets://";

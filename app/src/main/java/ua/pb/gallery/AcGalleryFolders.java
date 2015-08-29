@@ -17,11 +17,11 @@ import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.File;
@@ -37,7 +37,7 @@ import ua.pb.gallery.models.FolderEntity;
  */
 public class AcGalleryFolders extends Activity {
 
-    public static final String FOLDERS_KEY = "FOLDERS_KEY_";
+
 
     private RecyclerView foldersRecyclerView;
     private GridLayoutManager gridLayoutManager;
@@ -69,7 +69,7 @@ public class AcGalleryFolders extends Activity {
         } else {
             Bundle bundle = receivedIntent.getExtras();
 
-            ArrayList<String> foldersList = bundle.getStringArrayList(FOLDERS_KEY);
+            ArrayList<String> foldersList = bundle.getStringArrayList(Utils.FOLDERS_KEY);
             if (foldersList == null) {
                 showDialogAndDismiss("bundle.getStringArrayList(FOLDERS_KEY) == null");
             } else {
@@ -193,6 +193,8 @@ public class AcGalleryFolders extends Activity {
 
     //---------------------------------------------------------------------------------------------/
     LinearLayout actionBar;
+    TextView actionBarTitle;
+    ImageView backButton;
     int CURRENT_ACTION_BAR_HEIGHT;
     int MAX_ACTION_BAR_HEIGHT;
     private void applyNewMargin(int height) {
@@ -213,6 +215,17 @@ public class AcGalleryFolders extends Activity {
                 }
 
                 actionBar.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+            }
+        });
+
+        actionBarTitle = (TextView) findViewById(R.id.actionBarTitle);
+        actionBarTitle.setText("Folders");
+
+        backButton = (ImageView) findViewById(R.id.ivBack);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
             }
         });
     }
@@ -284,6 +297,7 @@ public class AcGalleryFolders extends Activity {
     int MAX_FAB_HEIGHT;
     int FAB_BOTTOM_MARGIN = 15;
     int FAB_RIGHT_MARGIN = 15;
+    boolean isFloatActionButtonGreen;
     private void initFloatActionButton() {
         floatActionButton = (ImageView) findViewById(R.id.floatActionButton);
 
@@ -322,18 +336,30 @@ public class AcGalleryFolders extends Activity {
 
     //---------------------------------------------------------------------------------------------/
     RelativeLayout searchFilterField;
-    EditText searchPhoto;
-    boolean needToShowSearchField;
+    EditText searchPhotoEditText;
+    boolean needToShowSearchField = true;// do I "need to show search field on the next click"? - yes(by default)
     private void initSearchField() {
         searchFilterField = (RelativeLayout) findViewById(R.id.searchFilterField);
-        searchPhoto = (EditText) findViewById(R.id.editText);
+        searchPhotoEditText = (EditText) findViewById(R.id.editText);
         //todo: add on inputListener
-        searchPhoto.addTextChangedListener(new TextWatcher() {
+        searchPhotoEditText.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {/**/}
 
             @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {/**/}
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (s.toString().length() > 0) {
+                    if (!isFloatActionButtonGreen) {
+                        isFloatActionButtonGreen = true;
+                        floatActionButton.setImageResource(R.mipmap.ic_search_green);
+                    }
+                } else {
+                    if (isFloatActionButtonGreen) {
+                        isFloatActionButtonGreen = false;
+                        floatActionButton.setImageResource(R.mipmap.ic_search_white);
+                    }
+                }
+            }
 
             @Override
             public void afterTextChanged(Editable s) {

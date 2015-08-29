@@ -1344,6 +1344,7 @@ containing a value of this type.
         public static final int ic_launcher=0x7f020037;
     }
     public static final class id {
+        public static final int actionBarTitle=0x7f0c004b;
         public static final int action_bar=0x7f0c0032;
         public static final int action_bar_activity_content=0x7f0c0000;
         public static final int action_bar_container=0x7f0c0031;
@@ -1360,7 +1361,7 @@ containing a value of this type.
         public static final int activity_chooser_view_content=0x7f0c0022;
         public static final int always=0x7f0c0017;
         public static final int beginning=0x7f0c0014;
-        public static final int changeGridImageView=0x7f0c004d;
+        public static final int changeGridImageView=0x7f0c004e;
         public static final int checkbox=0x7f0c002a;
         public static final int collapseActionView=0x7f0c0018;
         public static final int container=0x7f0c0040;
@@ -1369,12 +1370,12 @@ containing a value of this type.
         public static final int dialog=0x7f0c001c;
         public static final int disableHome=0x7f0c000d;
         public static final int dropdown=0x7f0c001d;
-        public static final int editText=0x7f0c0050;
+        public static final int editText=0x7f0c0051;
         public static final int edit_query=0x7f0c0034;
         public static final int end=0x7f0c0015;
         public static final int expand_activities_button=0x7f0c0023;
         public static final int expanded_menu=0x7f0c0029;
-        public static final int floatActionButton=0x7f0c004e;
+        public static final int floatActionButton=0x7f0c004f;
         public static final int header_tool=0x7f0c0049;
         public static final int home=0x7f0c0004;
         public static final int homeAsUp=0x7f0c000e;
@@ -1383,14 +1384,14 @@ containing a value of this type.
         public static final int ifRoom=0x7f0c0019;
         public static final int image=0x7f0c0024;
         public static final int imageView=0x7f0c0041;
-        public static final int imageView2=0x7f0c0051;
+        public static final int imageView2=0x7f0c0052;
         public static final int item_touch_helper_previous_elevation=0x7f0c0005;
         public static final int ivBack=0x7f0c004a;
         public static final int listMode=0x7f0c000a;
         public static final int list_item=0x7f0c0026;
         public static final int middle=0x7f0c0016;
         public static final int my_recycler_view=0x7f0c0048;
-        public static final int name=0x7f0c004b;
+        public static final int name=0x7f0c004c;
         public static final int never=0x7f0c001a;
         public static final int none=0x7f0c000f;
         public static final int normal=0x7f0c000b;
@@ -1398,7 +1399,7 @@ containing a value of this type.
         public static final int progress_horizontal=0x7f0c0007;
         public static final int radio=0x7f0c002c;
         public static final int relativeLayout=0x7f0c0042;
-        public static final int searchFilterField=0x7f0c004f;
+        public static final int searchFilterField=0x7f0c0050;
         public static final int search_badge=0x7f0c0036;
         public static final int search_bar=0x7f0c0035;
         public static final int search_button=0x7f0c0037;
@@ -1413,7 +1414,7 @@ containing a value of this type.
         public static final int showCustom=0x7f0c0010;
         public static final int showHome=0x7f0c0011;
         public static final int showTitle=0x7f0c0012;
-        public static final int spinner=0x7f0c004c;
+        public static final int spinner=0x7f0c004d;
         public static final int split_action_bar=0x7f0c0008;
         public static final int submit_area=0x7f0c003d;
         public static final int tabMode=0x7f0c000c;
@@ -1463,7 +1464,12 @@ containing a value of this type.
         public static final int support_simple_spinner_dropdown_item=0x7f04001b;
     }
     public static final class mipmap {
-        public static final int ic_placeholder=0x7f030000;
+        public static final int ic_here_is_input_field=0x7f030000;
+        public static final int ic_next=0x7f030001;
+        public static final int ic_placeholder=0x7f030002;
+        public static final int ic_search=0x7f030003;
+        public static final int ic_search_green=0x7f030004;
+        public static final int ic_search_white=0x7f030005;
     }
     public static final class string {
         public static final int abc_action_bar_home_description=0x7f060000;

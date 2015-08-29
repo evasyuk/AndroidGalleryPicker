@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/user/StudioProjects/gallery/app/src/main/AndroidManifest.xml:2:1-32:12
+ADDED from /home/user/StudioProjects/gallery/app/src/main/AndroidManifest.xml:2:1-41:12
 	xmlns:android
 		ADDED from /home/user/StudioProjects/gallery/app/src/main/AndroidManifest.xml:2:11-69
 	package
@@ -28,7 +28,7 @@ ADDED from /home/user/StudioProjects/gallery/app/src/main/AndroidManifest.xml:8:
 	android:name
 		ADDED from /home/user/StudioProjects/gallery/app/src/main/AndroidManifest.xml:8:22-77
 application
-ADDED from /home/user/StudioProjects/gallery/app/src/main/AndroidManifest.xml:10:5-31:19
+ADDED from /home/user/StudioProjects/gallery/app/src/main/AndroidManifest.xml:10:5-40:19
 MERGED from [com.android.support:appcompat-v7:22.0.0] /home/user/StudioProjects/gallery/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:support-v4:22.2.1] /home/user/StudioProjects/gallery/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.1/AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:support-v4:22.2.1] /home/user/StudioProjects/gallery/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.1/AndroidManifest.xml:22:5-20
@@ -70,3 +70,19 @@ ADDED from /home/user/StudioProjects/gallery/app/src/main/AndroidManifest.xml:25
 		ADDED from /home/user/StudioProjects/gallery/app/src/main/AndroidManifest.xml:25:19-50
 	android:launchMode
 		ADDED from /home/user/StudioProjects/gallery/app/src/main/AndroidManifest.xml:26:13-43
+activity#ua.pb.gallery.AcFolders
+ADDED from /home/user/StudioProjects/gallery/app/src/main/AndroidManifest.xml:30:9-33:20
+	android:screenOrientation
+		ADDED from /home/user/StudioProjects/gallery/app/src/main/AndroidManifest.xml:30:45-81
+	android:name
+		ADDED from /home/user/StudioProjects/gallery/app/src/main/AndroidManifest.xml:30:19-44
+	android:launchMode
+		ADDED from /home/user/StudioProjects/gallery/app/src/main/AndroidManifest.xml:31:13-43
+activity#ua.pb.gallery.AcPhotos
+ADDED from /home/user/StudioProjects/gallery/app/src/main/AndroidManifest.xml:34:9-37:20
+	android:screenOrientation
+		ADDED from /home/user/StudioProjects/gallery/app/src/main/AndroidManifest.xml:34:44-80
+	android:name
+		ADDED from /home/user/StudioProjects/gallery/app/src/main/AndroidManifest.xml:34:19-43
+	android:launchMode
+		ADDED from /home/user/StudioProjects/gallery/app/src/main/AndroidManifest.xml:35:13-43

@@ -18,6 +18,8 @@ import java.io.FilenameFilter;
 import java.util.ArrayList;
 
 import ua.pb.gallery.adapters.GalleryPhotosRecyclerAdapter;
+import ua.pb.gallery.adapters.GenericAdapter;
+import ua.pb.gallery.models.FileItemModel;
 import ua.pb.gallery.models.PhotoEntity;
 
 /**
@@ -30,11 +32,11 @@ public class AcGalleryPhotos extends Activity {
     private Activity activity;
 
     private RecyclerView photosRecyclerView;
-    private GalleryPhotosRecyclerAdapter adapter;
+    private GenericAdapter adapter;
 
     private GridLayoutManager gridLayoutManager;
 
-    private ArrayList<PhotoEntity> photos;
+    private ArrayList<FileItemModel> photos;
 
     private FilenameFilter picturesfilter = new FilenameFilter() {
         @Override
@@ -82,27 +84,26 @@ public class AcGalleryPhotos extends Activity {
         gridLayoutManager = new GridLayoutManager(activity, 2, LinearLayoutManager.VERTICAL, false);
         gridLayoutManager.setSmoothScrollbarEnabled(true);
 
-        adapter = new GalleryPhotosRecyclerAdapter(new GalleryPhotosRecyclerAdapter.OnItemClickListener() {
+        adapter = new GenericAdapter(false, new GenericAdapter.OnItemClickListener() {
             @Override
-            public void onItemClick(View view, int position) {
-                imageChosen(photos.get(position).getPhotoFileFullPath());
+            public void onItemClick(View view, int position, FileItemModel model) {
+                imageChosen(model.getFileFullPath());
             }
         }, photos = getPhotos(folderPath), activity);
 
         photosRecyclerView.setAdapter(adapter);
         photosRecyclerView.setLayoutManager(gridLayoutManager);
 
-        //todo: make adapter
     }
 
-    private ArrayList<PhotoEntity> getPhotos(String fodlerPath) {
+    private ArrayList<FileItemModel> getPhotos(String fodlerPath) {
         File folder = new File(fodlerPath);
         File[] photos = folder.listFiles(picturesfilter);
 
-        ArrayList<PhotoEntity> result = new ArrayList<>(photos.length);
+        ArrayList<FileItemModel> result = new ArrayList<>(photos.length);
 
         for (File photoFile : photos) {
-            result.add(new PhotoEntity(photoFile.getAbsolutePath(), photoFile));
+            result.add(new FileItemModel(photoFile.getAbsolutePath(), photoFile));
         }
 
         return result;

@@ -75,6 +75,8 @@ public class GalleryPhotosRecyclerAdapter extends RecyclerView.Adapter<GalleryPh
         ImageView folderCover;
         TextView folderName;
 
+
+
         public PhotoViewHolder(View itemView) {
             super(itemView);
 
