@@ -1,18 +1,9 @@
 package ua.pb.gallery;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
-import android.view.Window;
 import android.widget.Toast;
 
-import java.io.File;
-import java.util.ArrayList;
-
-import ua.pb.gallery.adapters.GenericAdapter;
-import ua.pb.gallery.models.FileItemModel;
-import ua.pb.gallery.models.FolderEntity;
 
 /**
  * Created by user on 29.08.15.

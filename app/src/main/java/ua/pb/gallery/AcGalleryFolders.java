@@ -35,6 +35,7 @@ import ua.pb.gallery.models.FolderEntity;
 /**
  * Created by user on 15.08.15.
  */
+@Deprecated
 public class AcGalleryFolders extends Activity {
 
 

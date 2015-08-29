@@ -25,6 +25,7 @@ import ua.pb.gallery.models.PhotoEntity;
 /**
  * Created by user on 15.08.15.
  */
+@Deprecated
 public class AcGalleryPhotos extends Activity {
 
 

@@ -31,92 +31,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8f39829d-957c-4339-8a90-237d1ec037f4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/ic_here_is_input_field-web.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_here_is_input_field.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_here_is_input_field.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_here_is_input_field.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_here_is_input_field.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_here_is_input_field.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/ic_next-web.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_next.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_next.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_next.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_next.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_next.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/ic_search-web.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_search.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_search.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_search.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_search.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_search.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/ic_search_green-web.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_search_green.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_search_green.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_search_green.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_search_green.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_search_green.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/ic_search_white-web.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_search_white.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_search_white.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_search_white.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_search_white.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_search_white.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/ua/pb/gallery/AcFolders.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/ua/pb/gallery/AcGalleryBasic.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/ua/pb/gallery/AcPhotos.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/ua/pb/gallery/models/FileItemModel.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/ua/pb/gallery/adapters/GenericAdapter.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/java/ua/pb/gallery/.gradle/2.2.1/taskArtifacts/cache.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/java/ua/pb/gallery/.gradle/2.2.1/taskArtifacts/cache.properties.lock" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/java/ua/pb/gallery/.gradle/2.2.1/taskArtifacts/fileHashes.bin" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/java/ua/pb/gallery/.gradle/2.2.1/taskArtifacts/fileSnapshots.bin" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/java/ua/pb/gallery/.gradle/2.2.1/taskArtifacts/outputFileStates.bin" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/java/ua/pb/gallery/.gradle/2.2.1/taskArtifacts/taskArtifacts.bin" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/java/ua/pb/gallery/gradle/wrapper/gradle-wrapper.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/java/ua/pb/gallery/gradle/wrapper/gradle-wrapper.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/java/ua/pb/gallery/gradlew" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/java/ua/pb/gallery/gradlew.bat" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/ua/pb/gallery/AcGalleryFolders.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/ua/pb/gallery/AcGalleryFolders.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/ua/pb/gallery/AcGalleryPhotos$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/ua/pb/gallery/AcGalleryPhotos$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/ua/pb/gallery/AcGalleryPhotos$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/ua/pb/gallery/AcGalleryPhotos$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/ua/pb/gallery/AcGalleryPhotos.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/ua/pb/gallery/AcGalleryPhotos.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/ua/pb/gallery/adapters/GalleryFoldersRecyclerAdapter$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/ua/pb/gallery/adapters/GalleryFoldersRecyclerAdapter$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/ua/pb/gallery/adapters/GalleryFoldersRecyclerAdapter$FolderViewHolder.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/ua/pb/gallery/adapters/GalleryFoldersRecyclerAdapter$FolderViewHolder.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/ua/pb/gallery/adapters/GalleryFoldersRecyclerAdapter.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/ua/pb/gallery/adapters/GalleryFoldersRecyclerAdapter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/ua/pb/gallery/adapters/GalleryPhotosRecyclerAdapter$PhotoViewHolder.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/ua/pb/gallery/adapters/GalleryPhotosRecyclerAdapter$PhotoViewHolder.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/ua/pb/gallery/R$id.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/ua/pb/gallery/R$id.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/ua/pb/gallery/R$integer.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/ua/pb/gallery/R$integer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/ua/pb/gallery/R$layout.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/ua/pb/gallery/R$layout.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/ua/pb/gallery/R$mipmap.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/ua/pb/gallery/R$mipmap.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/ua/pb/gallery/R$string.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/ua/pb/gallery/R$string.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/ua/pb/gallery/R$style.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/ua/pb/gallery/R$style.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/ua/pb/gallery/R$styleable.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/ua/pb/gallery/R$styleable.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/ua/pb/gallery/R.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/ua/pb/gallery/R.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/ua/pb/gallery/StarterActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/ua/pb/gallery/StarterActivity.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/ua/pb/gallery/Utils.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/ua/pb/gallery/Utils.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/outputs/apk/app-debug-unaligned.apk" afterPath="$PROJECT_DIR$/app/build/outputs/apk/app-debug-unaligned.apk" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/outputs/apk/app-debug.apk" afterPath="$PROJECT_DIR$/app/build/outputs/apk/app-debug.apk" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/cache.properties.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/dex/debug/classes.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/dex/debug/classes.dex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileHashes.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileSnapshots.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/resources-debug.ap_" afterPath="$PROJECT_DIR$/app/build/intermediates/res/resources-debug.ap_" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/taskArtifacts.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ua/pb/gallery/AcFolders.java" afterPath="$PROJECT_DIR$/app/src/main/java/ua/pb/gallery/AcFolders.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ua/pb/gallery/AcGalleryFolders.java" afterPath="$PROJECT_DIR$/app/src/main/java/ua/pb/gallery/AcGalleryFolders.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ua/pb/gallery/AcGalleryPhotos.java" afterPath="$PROJECT_DIR$/app/src/main/java/ua/pb/gallery/AcGalleryPhotos.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/manifests/full/debug/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/manifests/full/debug/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ua/pb/gallery/adapters/GalleryFoldersRecyclerAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/ua/pb/gallery/adapters/GalleryFoldersRecyclerAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ua/pb/gallery/adapters/GalleryPhotosRecyclerAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/ua/pb/gallery/adapters/GalleryPhotosRecyclerAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/ua/pb/gallery/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/ua/pb/gallery/R.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/symbols/debug/R.txt" afterPath="$PROJECT_DIR$/app/build/intermediates/symbols/debug/R.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ua/pb/gallery/StarterActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/ua/pb/gallery/StarterActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ua/pb/gallery/Utils.java" afterPath="$PROJECT_DIR$/app/src/main/java/ua/pb/gallery/Utils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/gallery_folder_item_1x.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/gallery_folder_item_1x.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/gallery_recycler_layout.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/gallery_recycler_layout.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/gallery_recycler_layout.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/gallery_recycler_layout.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" afterPath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeResourcesdebug/merger.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeResourcesdebug/merger.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="gallery.iws" />
@@ -161,8 +78,18 @@
       <file leaf-file-name="AcGalleryFolders.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/ua/pb/gallery/AcGalleryFolders.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.035714">
-              <caret line="88" column="0" selection-start-line="88" selection-start-column="0" selection-end-line="98" selection-end-column="5" />
+            <state vertical-scroll-proportion="-3.75">
+              <caret line="37" column="11" selection-start-line="37" selection-start-column="11" selection-end-line="37" selection-end-column="11" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AcFolders.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/ua/pb/gallery/AcFolders.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -171,33 +98,9 @@
       <file leaf-file-name="AcGalleryBasic.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/ua/pb/gallery/AcGalleryBasic.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-86.92857">
-              <caret line="292" column="65" selection-start-line="292" selection-start-column="65" selection-end-line="292" selection-end-column="65" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1782#2068#0" expanded="true" />
-                <element signature="e#2067#2068#0" expanded="true" />
-                <element signature="e#3456#3750#0" expanded="true" />
-                <element signature="e#3749#3750#0" expanded="true" />
-                <element signature="e#4049#4335#0" expanded="true" />
-                <element signature="e#4334#4335#0" expanded="true" />
-                <element signature="e#11704#11889#0" expanded="true" />
-                <element signature="e#11888#11889#0" expanded="true" />
-                <element signature="e#16681#16682#0" expanded="true" />
-                <element signature="e#16754#16755#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AcFolders.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/ua/pb/gallery/AcFolders.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.87525153">
-              <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.0">
+              <caret line="39" column="22" selection-start-line="39" selection-start-column="22" selection-end-line="39" selection-end-column="22" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -207,6 +110,16 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="5" column="29" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AcGalleryPhotos.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/ua/pb/gallery/AcGalleryPhotos.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.2112676">
+              <caret line="27" column="11" selection-start-line="27" selection-start-column="11" selection-end-line="27" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -1709,14 +1622,14 @@
         <option value="$PROJECT_DIR$/app/src/main/java/ua/pb/gallery/models/FolderEntity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/ua/pb/gallery/models/FileItemModel.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/ua/pb/gallery/adapters/GenericAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/ua/pb/gallery/AcGalleryPhotos.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/ua/pb/gallery/Utils.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/ua/pb/gallery/AcGalleryFolders.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/ua/pb/gallery/AcPhotos.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/ua/pb/gallery/StarterActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/ua/pb/gallery/AcGalleryBasic.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/ua/pb/gallery/AcFolders.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/ua/pb/gallery/AcGalleryFolders.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/ua/pb/gallery/AcGalleryPhotos.java" />
       </list>
     </option>
   </component>
@@ -2100,7 +2013,13 @@
       <option name="project" value="LOCAL" />
       <updated>1440462466573</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="1. design(FAB, ActionBar. Search_field)&#10;2. Generic RecyclerView adapter for both folders and photos&#10;3. Generic activity for both folders and photos&#10;">
+      <created>1440872477312</created>
+      <option name="number" value="00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1440872477312</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -2120,7 +2039,7 @@
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17625134" sideWeight="0.5081967" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32969433" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4279476" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4279476" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -2183,7 +2102,8 @@
     <MESSAGE value="quick return pattern" />
     <MESSAGE value="search filtering added&#10;add rough span changing from 2 to 4 columns" />
     <MESSAGE value="sorting(alphabetic || time)&#10;last picture setting up as cover" />
-    <option name="LAST_COMMIT_MESSAGE" value="sorting(alphabetic || time)&#10;last picture setting up as cover" />
+    <MESSAGE value="1. design(FAB, ActionBar. Search_field)&#10;2. Generic RecyclerView adapter for both folders and photos&#10;3. Generic activity for both folders and photos&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. design(FAB, ActionBar. Search_field)&#10;2. Generic RecyclerView adapter for both folders and photos&#10;3. Generic activity for both folders and photos&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2567,19 +2487,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ua/pb/gallery/AcGalleryPhotos.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.1518561">
-          <caret line="111" column="0" selection-start-line="111" selection-start-column="0" selection-end-line="118" selection-end-column="5" />
-          <folding>
-            <element signature="e#1027#1313#0" expanded="true" />
-            <element signature="e#1312#1313#0" expanded="true" />
-            <element signature="e#2634#2860#0" expanded="true" />
-            <element signature="e#2859#2860#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/ua/pb/gallery/Utils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2607,26 +2514,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ua/pb/gallery/AcGalleryBasic.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-86.92857">
-          <caret line="292" column="65" selection-start-line="292" selection-start-column="65" selection-end-line="292" selection-end-column="65" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1782#2068#0" expanded="true" />
-            <element signature="e#2067#2068#0" expanded="true" />
-            <element signature="e#3456#3750#0" expanded="true" />
-            <element signature="e#3749#3750#0" expanded="true" />
-            <element signature="e#4049#4335#0" expanded="true" />
-            <element signature="e#4334#4335#0" expanded="true" />
-            <element signature="e#11704#11889#0" expanded="true" />
-            <element signature="e#11888#11889#0" expanded="true" />
-            <element signature="e#16681#16682#0" expanded="true" />
-            <element signature="e#16754#16755#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/ua/pb/gallery/AcPhotos.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2635,21 +2522,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ua/pb/gallery/AcGalleryFolders.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ua/pb/gallery/AcFolders.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.035714">
-          <caret line="88" column="0" selection-start-line="88" selection-start-column="0" selection-end-line="98" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ua/pb/gallery/AcFolders.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ua/pb/gallery/AcGalleryBasic.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.87525153">
-          <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.0">
+          <caret line="39" column="22" selection-start-line="39" selection-start-column="22" selection-end-line="39" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ua/pb/gallery/AcGalleryFolders.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.75">
+          <caret line="37" column="11" selection-start-line="37" selection-start-column="11" selection-end-line="37" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ua/pb/gallery/AcGalleryPhotos.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2112676">
+          <caret line="27" column="11" selection-start-line="27" selection-start-column="11" selection-end-line="27" selection-end-column="11" />
+          <folding />
         </state>
       </provider>
     </entry>
