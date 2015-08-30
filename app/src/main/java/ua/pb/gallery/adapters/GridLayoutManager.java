@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 
+@Deprecated
 public class GridLayoutManager extends BaseLayoutManager {
 
     private static final int DEFAULT_COLUMNS = 2;

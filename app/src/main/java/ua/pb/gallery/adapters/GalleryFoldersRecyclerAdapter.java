@@ -25,6 +25,7 @@ import ua.pb.gallery.models.FolderEntity;
 /**
  * Created by user on 15.08.15.
  */
+@Deprecated
 public class GalleryFoldersRecyclerAdapter extends RecyclerView.Adapter<GalleryFoldersRecyclerAdapter.FolderViewHolder> implements FilterInterface{
 
     public static final int DESIRED_WIDTH = 240;

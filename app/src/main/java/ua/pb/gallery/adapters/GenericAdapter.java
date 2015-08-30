@@ -1,6 +1,7 @@
 package ua.pb.gallery.adapters;
 
 import android.app.Activity;
+import android.graphics.Bitmap;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -10,6 +11,10 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.nostra13.universalimageloader.core.assist.FailReason;
+import com.nostra13.universalimageloader.core.assist.ImageSize;
+import com.nostra13.universalimageloader.core.listener.ImageLoadingListener;
 
 import java.io.File;
 import java.io.FilenameFilter;
@@ -28,6 +33,9 @@ public class GenericAdapter extends RecyclerView.Adapter<GenericAdapter.FileItem
 
     boolean isFolderMode;
 
+    private static final int IMAGE_SIZE_DUAL = 100;
+    private static final int IAMGE_SIZE_QUADRO = 250;
+
     private Activity activity;
 
     private ArrayList<FileItemModel> originList;
@@ -36,6 +44,10 @@ public class GenericAdapter extends RecyclerView.Adapter<GenericAdapter.FileItem
     private OnItemClickListener onItemClickedCallback;
 
     private boolean isDualSpan;
+
+    private ImageSize imageSizeDualTile = new ImageSize(IAMGE_SIZE_QUADRO, IAMGE_SIZE_QUADRO);
+    private ImageSize imageSizeQuadroTile = new ImageSize(IMAGE_SIZE_DUAL, IMAGE_SIZE_DUAL);
+
 
     private static Comparator<FileItemModel> ALPHABETICAL_ORDER = new Comparator<FileItemModel>() {
         public int compare(FileItemModel str1, FileItemModel str2) {
@@ -108,7 +120,7 @@ public class GenericAdapter extends RecyclerView.Adapter<GenericAdapter.FileItem
     }
 
     @Override
-    public void onBindViewHolder(FileItemHolderView fileItemHolderView, int i) {
+    public void onBindViewHolder(final FileItemHolderView fileItemHolderView, int i) {
         Log.d("Recycler", "onBindViewHolder(FileItemHolderView, int) index = " + i);
 
         FileItemModel entity = filteredList.get(i);
@@ -119,17 +131,51 @@ public class GenericAdapter extends RecyclerView.Adapter<GenericAdapter.FileItem
             File[] innerPhotos = entity.getFile().listFiles(picturesfilter);
             fileItemHolderView.photosCount.setText("" + innerPhotos.length);
 
-            if (innerPhotos.length > 0) {
-                Utils.IMAGE_LOADER.displayImage(Utils.FILE + findLastOne(innerPhotos).getAbsolutePath(), fileItemHolderView.folderCover);
-            }
+            if (innerPhotos.length > 0)
+                loadImage(Utils.FILE + findLastOne(innerPhotos).getAbsolutePath(), fileItemHolderView.folderCover);
             else
-                Utils.IMAGE_LOADER.displayImage(Utils.DRAWABLE + R.drawable.ic_launcher, fileItemHolderView.folderCover);
+                loadImage(Utils.DRAWABLE + R.drawable.ic_launcher, fileItemHolderView.folderCover);
 
         } else {
             fileItemHolderView.photoCountHolder.setVisibility(View.GONE);
 
-            Utils.IMAGE_LOADER.displayImage(Utils.FILE + entity.getFile().getAbsolutePath(), fileItemHolderView.folderCover);
+            loadImage(Utils.FILE + entity.getFile().getAbsolutePath(), fileItemHolderView.folderCover);
         }
+    }
+
+    private void loadImage(String what, final ImageView where) {
+        ImageSize cuImageSize = !isDualSpan ? imageSizeDualTile : imageSizeQuadroTile;
+
+        android.util.Log.e("BITMAP PROBLEM", "cuImageSize: " + cuImageSize.toString());
+
+        Utils.IMAGE_LOADER.loadImage(what, cuImageSize, new ImageLoadingListener() {
+            @Override
+            public void onLoadingStarted(String s, View view) {
+                android.util.Log.e("BITMAP PROBLEM", "onLoadingStarted, String s: " + s);
+            }
+
+            @Override
+            public void onLoadingFailed(String s, View view, FailReason failReason) {
+                android.util.Log.e("BITMAP PROBLEM", "onLoadingFailed, FailReason: " + failReason);
+            }
+
+            @Override
+            public void onLoadingComplete(String s, View view, final Bitmap bitmap) {
+                android.util.Log.e("BITMAP PROBLEM", "onLoadingComplete, String s: " + s);
+                activity.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        where.setImageBitmap(bitmap);
+                    }
+                });
+
+            }
+
+            @Override
+            public void onLoadingCancelled(String s, View view) {
+                android.util.Log.e("BITMAP PROBLEM", "onLoadingCancelled, String s: " + s);
+            }
+        });
     }
 
     private File findLastOne(File[] list) {

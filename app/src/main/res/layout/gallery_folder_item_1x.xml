@@ -25,12 +25,10 @@
             android:id="@+id/relativeLayout" />
 
         <RelativeLayout
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_alignTop="@+id/relativeLayout"
             android:layout_alignBottom="@+id/id_devider_0"
-            android:layout_alignLeft="@+id/temp_id_g354"
-            android:layout_alignRight="@+id/temp_id_g354"
             android:background="#606060"
             android:alpha="0.65"></RelativeLayout>
 

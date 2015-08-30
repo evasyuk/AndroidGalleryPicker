@@ -25,12 +25,11 @@
             android:id="@+id/relativeLayout" />
 
         <RelativeLayout
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_alignTop="@+id/relativeLayout"
             android:layout_alignBottom="@+id/id_devider_0"
             android:layout_alignLeft="@+id/temp_id_g354"
-            android:layout_alignRight="@+id/temp_id_g354"
             android:background="#606060"
             android:alpha="0.65"></RelativeLayout>
 
@@ -43,7 +42,7 @@
             android:textColor="#ffffff"
             android:layout_marginLeft="5dp"
             android:layout_below="@+id/relativeLayout"
-            android:textSize="18dp" />
+            android:textSize="16dp" />
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="fill_parent"
@@ -53,14 +52,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Photos: "
-                android:id="@+id/textView2" android:layout_below="@+id/textView" android:textSize="14dp"
+                android:id="@+id/textView2" android:layout_below="@+id/textView" android:textSize="12dp"
                 android:textColor="#ffffff"
                 android:layout_marginLeft="5dp" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0"
-                android:id="@+id/textView3" android:textSize="14dp"
+                android:id="@+id/textView3" android:textSize="12dp"
                 android:textColor="#ffffff" />
         </LinearLayout>
 

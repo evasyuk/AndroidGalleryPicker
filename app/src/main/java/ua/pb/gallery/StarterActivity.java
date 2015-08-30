@@ -33,22 +33,11 @@ public class StarterActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
-        // Universal Image Loader
-        // See the sample project how to use ImageLoader correctly.
-        DisplayImageOptions options = new DisplayImageOptions.Builder()
-                .showImageOnLoading(R.mipmap.ic_placeholder) // resource or drawable
-                .showImageOnFail(R.drawable.ic_launcher) // resource or drawable
-                .resetViewBeforeLoading(false)  // default
-                .imageScaleType(ImageScaleType.IN_SAMPLE_INT) // default
-                .bitmapConfig(Bitmap.Config.ARGB_8888) // default
-                .displayer(new SimpleBitmapDisplayer()) // default
-                .cacheInMemory(true)
-                .cacheOnDisk(true)
-                .build();
+
 
         // Create global configuration and initialize ImageLoader with this config
         ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(this)
-                .defaultDisplayImageOptions(options)
+                .defaultDisplayImageOptions(Utils.IMAGE_LOADER_OPTIONS)
                 .build();
         ImageLoader.getInstance().init(config);
         // Universal Image Loader

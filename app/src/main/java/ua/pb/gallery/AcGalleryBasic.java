@@ -130,6 +130,13 @@ public abstract class AcGalleryBasic extends Activity {
     }
 
     @Override
+    protected void onDestroy() {
+        Runtime.getRuntime().gc();
+
+        super.onDestroy();
+    }
+
+    @Override
     public void onBackPressed() {
         super.onBackPressed();
         //finishActivity(RESULT_CANCELED);
@@ -196,13 +203,7 @@ public abstract class AcGalleryBasic extends Activity {
     private void createRecyclerView (final ArrayList<FileItemModel> list, boolean isDualSpan) {
         recyclerAdapter = new GenericAdapter(isFolderMode, onItemClickListener, list, this);
 
-//        (new GalleryFoldersRecyclerAdapter.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(View view, int position) {
-//                Toast.makeText(activity, "position=" + position, Toast.LENGTH_SHORT).show();
-//                startAcGalleryPhoto(list.get(position).getFolderFullPath());
-//            }
-//        }
+        android.util.Log.e("BITMAP PROBLEM", "createRecyclerView, isDualSpan: " + isDualSpan);
 
         recyclerAdapter.changeLayoutSpanType(!isDualSpan);
 

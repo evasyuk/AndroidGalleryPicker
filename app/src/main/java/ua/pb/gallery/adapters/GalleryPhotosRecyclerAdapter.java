@@ -20,6 +20,7 @@ import ua.pb.gallery.R;
 /**
  * Created by user on 16.08.15.
  */
+@Deprecated
 public class GalleryPhotosRecyclerAdapter extends RecyclerView.Adapter<GalleryPhotosRecyclerAdapter.PhotoViewHolder> {
 
     private OnItemClickListener onItemClickedCallback;
