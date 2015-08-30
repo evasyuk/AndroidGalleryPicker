@@ -1425,6 +1425,7 @@ containing a value of this type.
         public static final int title=0x7f0c0028;
         public static final int up=0x7f0c0009;
         public static final int useLogo=0x7f0c0013;
+        public static final int view_pager=0x7f0c0053;
         public static final int withText=0x7f0c001b;
         public static final int wrap_content=0x7f0c001e;
     }
@@ -1461,7 +1462,8 @@ containing a value of this type.
         public static final int gallery_photo_item=0x7f040018;
         public static final int gallery_recycler_layout=0x7f040019;
         public static final int main=0x7f04001a;
-        public static final int support_simple_spinner_dropdown_item=0x7f04001b;
+        public static final int preview_activity=0x7f04001b;
+        public static final int support_simple_spinner_dropdown_item=0x7f04001c;
     }
     public static final class mipmap {
         public static final int ic_here_is_input_field=0x7f030000;

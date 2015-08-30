@@ -130,20 +130,36 @@ public abstract class AcGalleryBasic extends Activity {
             } else {
                 String folderName = getIntent().getExtras().getString(Utils.PHOTO_KEY);
                 if (folderName != null) {
-                    ArrayList<FileItemModel> result = getPhotos(folderName);
+                    final ArrayList<FileItemModel> result = getPhotos(folderName);
+
+                    final ArrayList<String> photos2 = new ArrayList<>(result.size());
+
+                    for (FileItemModel file : result) {
+                        photos2.add(file.getFileFullPath());
+                    }
 
                     setupActivity(false, result, new GenericAdapter.OnItemClickListener() {
                         @Override
                         public void onItemClick(View view, int position, FileItemModel model) {
-                            imageChosen(model.getFileFullPath());
+                            //imageChosen(model.getFileFullPath());
+
+                            int chosenPhoto = 0;
+
+                            for (int index = 0; index < result.size(); index++) {
+                                FileItemModel temp = result.get(index);
+                                if (temp.getFileFullPath().equals(model.getFileFullPath())) {
+                                    chosenPhoto = index;
+                                    break;
+                                }
+                            }
+
+                            imageChosen2(photos2, chosenPhoto);
                         }
                     });
                 } else {
                     showDialogAndDismiss("folderName == null");
                 }
             }
-
-
         }
     }
 
@@ -170,6 +186,16 @@ public abstract class AcGalleryBasic extends Activity {
         Intent intent = new Intent();
         intent.putExtra(Utils.PHOTO_RESULT_PATH, filePath);
         setResult(Utils.RESULT_PICK_IMAGE_OK, intent);
+        finish();
+    }
+
+    private void imageChosen2(ArrayList<String> photos, int chosenPhoto) {
+        Intent intent = new Intent(AcGalleryBasic.this, AcPreview.class);
+
+        intent.putExtra(AcPreview.CHOSEN_PHOTO, chosenPhoto);
+        intent.putExtra(Utils.FOLDERS_KEY, photos);
+        //setResult(Utils.RESULT_PICK_IMAGE_OK, intent);
+        startActivityForResult(intent, Utils.RESULT_PICK_IMAGE_OK);
         finish();
     }
 

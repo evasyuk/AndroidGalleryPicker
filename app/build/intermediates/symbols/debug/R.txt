@@ -429,6 +429,7 @@ int id textView3 0x7f0c0047
 int id title 0x7f0c0028
 int id up 0x7f0c0009
 int id useLogo 0x7f0c0013
+int id view_pager 0x7f0c0053
 int id withText 0x7f0c001b
 int id wrap_content 0x7f0c001e
 int integer abc_config_activityDefaultDur 0x7f0a0001
@@ -461,7 +462,8 @@ int layout gallery_folder_item_1x 0x7f040017
 int layout gallery_photo_item 0x7f040018
 int layout gallery_recycler_layout 0x7f040019
 int layout main 0x7f04001a
-int layout support_simple_spinner_dropdown_item 0x7f04001b
+int layout preview_activity 0x7f04001b
+int layout support_simple_spinner_dropdown_item 0x7f04001c
 int mipmap ic_here_is_input_field 0x7f030000
 int mipmap ic_next 0x7f030001
 int mipmap ic_placeholder 0x7f030002
