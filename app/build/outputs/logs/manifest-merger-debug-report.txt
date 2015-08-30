@@ -87,10 +87,8 @@ ADDED from /home/user/StudioProjects/gallery/app/src/main/AndroidManifest.xml:28
 	android:launchMode
 		ADDED from /home/user/StudioProjects/gallery/app/src/main/AndroidManifest.xml:29:13-43
 activity#ua.pb.gallery.AcPreview
-ADDED from /home/user/StudioProjects/gallery/app/src/main/AndroidManifest.xml:31:9-32:45
+ADDED from /home/user/StudioProjects/gallery/app/src/main/AndroidManifest.xml:31:9-32:16
 	android:screenOrientation
 		ADDED from /home/user/StudioProjects/gallery/app/src/main/AndroidManifest.xml:31:45-81
 	android:name
 		ADDED from /home/user/StudioProjects/gallery/app/src/main/AndroidManifest.xml:31:19-44
-	android:launchMode
-		ADDED from /home/user/StudioProjects/gallery/app/src/main/AndroidManifest.xml:32:13-43

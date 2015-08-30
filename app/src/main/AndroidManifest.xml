@@ -29,7 +29,7 @@
             android:launchMode="singleTop"/>
 
         <activity android:name=".AcPreview" android:screenOrientation="portrait"
-            android:launchMode="singleTop"/>
+             />
 
 
     </application>

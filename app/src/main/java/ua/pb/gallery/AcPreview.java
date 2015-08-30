@@ -11,6 +11,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.nostra13.universalimageloader.core.assist.FailReason;
 import com.nostra13.universalimageloader.core.assist.ImageSize;
@@ -22,6 +24,7 @@ import java.util.List;
 
 import ua.pb.gallery.adapters.GenericAdapter;
 import ua.pb.gallery.models.FileItemModel;
+import ua.pb.gallery.widget.AnimatingRelativeLayout;
 
 /**
  * Created by user on 30.08.15.
@@ -31,6 +34,12 @@ public class AcPreview extends Activity {
     public static final String FOLDERS_KEY = "FOLDERS_KEY_";
 
     public static final String CHOSEN_PHOTO = "CHOSEN_PHOTO";
+
+    ArrayList<String> photosString;
+
+    ImagePagerAdapter imageAdapter;
+
+    ViewPager viewPager;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -51,7 +60,7 @@ public class AcPreview extends Activity {
         } else {
             Bundle bundle = receivedIntent.getExtras();
 
-            ArrayList<String> foldersList = bundle.getStringArrayList(FOLDERS_KEY);
+            ArrayList<String> foldersList = photosString = bundle.getStringArrayList(FOLDERS_KEY);
             int chosenPhoto = bundle.getInt(CHOSEN_PHOTO);
 
             if (foldersList == null) {
@@ -79,12 +88,73 @@ public class AcPreview extends Activity {
     private void setupContent(List<FileItemModel> photosList, int chosenOne) {
         setContentView(R.layout.preview_activity);
 
-        ViewPager viewPager = (ViewPager) findViewById(R.id.view_pager);
-        ImagePagerAdapter adapter = new ImagePagerAdapter(this, photosList);
+        header = (AnimatingRelativeLayout) findViewById(R.id.header);
+        backButtonWrapper = (RelativeLayout) findViewById(R.id.back_button_wrapper);
+        textTitle = (TextView) findViewById(R.id.textView4);
+
+        headerOverlayCancel = (RelativeLayout) findViewById(R.id.header_overlay_left);
+        headerOverlayConfirm = (RelativeLayout) findViewById(R.id.header_overlay_right);
+
+        backButtonWrapper.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+
+        headerOverlayCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+
+        headerOverlayConfirm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                confirmAndReturn();
+            }
+        });
+
+        textTitle.setText("PhotoPreview");
+
+        ViewPager viewPager = this.viewPager = (ViewPager) findViewById(R.id.view_pager);
+        ImagePagerAdapter adapter = imageAdapter = new ImagePagerAdapter(this, photosList);
         viewPager.setAdapter(adapter);
+
+//        viewPager.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if (isHeaderHidden) {
+//                    header.show(true);
+//                    isHeaderHidden = !isHeaderHidden;
+//                } else {
+//                    header.hide(true);
+//                    isHeaderHidden = !isHeaderHidden;
+//                }
+//            }
+//        });
 
         viewPager.setCurrentItem(chosenOne);
     }
+
+    private void confirmAndReturn() {
+        int currentPhotoIndex = viewPager.getCurrentItem();
+        String result = photosString.get(currentPhotoIndex);
+
+        Intent intent = getIntent();
+        intent.putExtra(Utils.PHOTO_RESULT_PATH, result);
+        setResult(Utils.RESULT_PICK_IMAGE_OK, intent);
+        finish();
+    }
+
+    AnimatingRelativeLayout header;
+    RelativeLayout backButtonWrapper;
+    TextView textTitle;
+    boolean isHeaderHidden;
+
+    RelativeLayout headerOverlayCancel;
+    RelativeLayout headerOverlayConfirm;
 
     private class ImagePagerAdapter extends PagerAdapter {
 
@@ -111,13 +181,26 @@ public class AcPreview extends Activity {
         public Object instantiateItem(ViewGroup container, int position) {
             Context context = activity;
             ImageView imageView = new ImageView(context);
-            int padding = 10;
-            imageView.setPadding(padding, padding, padding, padding);
             //imageView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
 
             loadImage(Utils.FILE + list.get(position).getFileFullPath(), imageView);
 
+            imageView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    android.util.Log.e("ON TOUCH", "touch intercepted");
+                    if (isHeaderHidden) {
+                        header.show(true);
+                        isHeaderHidden = !isHeaderHidden;
+                    } else {
+                        header.hide(true);
+                        isHeaderHidden = !isHeaderHidden;
+                    }
+                }
+            });
+
             ((ViewPager) container).addView(imageView, 0);
+
             return imageView;
         }
 

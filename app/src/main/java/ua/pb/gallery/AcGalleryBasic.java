@@ -28,6 +28,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.view.Window;
@@ -179,6 +180,19 @@ public abstract class AcGalleryBasic extends Activity {
         if (!isFolderMode) {
             setResult(Utils.RESULT_PICK_IMAGE_CANCALLED);
             finish();
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        Log.d("StarterActivity", "requestCode " + requestCode + "; resultCode " + requestCode);
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == Utils.RESULT_PICK_IMAGE_OK) {
+            Log.d("StarterActivity", "chosen photo path: " + data.getStringExtra(Utils.PHOTO_RESULT_PATH) );
+            Toast.makeText(this, "chosen photo path: " + data.getStringExtra(Utils.PHOTO_RESULT_PATH), Toast.LENGTH_LONG).show();
+            finish();
+        } else {
+            Toast.makeText(this, "result is shit", Toast.LENGTH_LONG).show();
         }
     }
 

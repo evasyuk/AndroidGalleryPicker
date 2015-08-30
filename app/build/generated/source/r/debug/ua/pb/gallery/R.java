@@ -17,6 +17,8 @@ public final class R {
         public static final int abc_slide_in_top=0x7f050005;
         public static final int abc_slide_out_bottom=0x7f050006;
         public static final int abc_slide_out_top=0x7f050007;
+        public static final int in_animation=0x7f050008;
+        public static final int out_animation=0x7f050009;
     }
     public static final class attr {
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
@@ -1360,6 +1362,7 @@ containing a value of this type.
         public static final int action_mode_close_button=0x7f0c0021;
         public static final int activity_chooser_view_content=0x7f0c0022;
         public static final int always=0x7f0c0017;
+        public static final int back_button_wrapper=0x7f0c0056;
         public static final int beginning=0x7f0c0014;
         public static final int changeGridImageView=0x7f0c004e;
         public static final int checkbox=0x7f0c002a;
@@ -1376,6 +1379,15 @@ containing a value of this type.
         public static final int expand_activities_button=0x7f0c0023;
         public static final int expanded_menu=0x7f0c0029;
         public static final int floatActionButton=0x7f0c004f;
+        public static final int footer=0x7f0c0058;
+        public static final int footer_inner_left=0x7f0c005a;
+        public static final int footer_inner_right=0x7f0c005c;
+        public static final int footer_middle=0x7f0c0059;
+        public static final int header=0x7f0c0054;
+        public static final int header_overlay=0x7f0c005e;
+        public static final int header_overlay_left=0x7f0c0060;
+        public static final int header_overlay_middle=0x7f0c005f;
+        public static final int header_overlay_right=0x7f0c0062;
         public static final int header_tool=0x7f0c0049;
         public static final int home=0x7f0c0004;
         public static final int homeAsUp=0x7f0c000e;
@@ -1385,6 +1397,11 @@ containing a value of this type.
         public static final int image=0x7f0c0024;
         public static final int imageView=0x7f0c0041;
         public static final int imageView2=0x7f0c0052;
+        public static final int imageView3=0x7f0c0057;
+        public static final int imageView4=0x7f0c005d;
+        public static final int imageView5=0x7f0c005b;
+        public static final int imageView6=0x7f0c0061;
+        public static final int imageView7=0x7f0c0063;
         public static final int item_touch_helper_previous_elevation=0x7f0c0005;
         public static final int ivBack=0x7f0c004a;
         public static final int listMode=0x7f0c000a;
@@ -1422,6 +1439,7 @@ containing a value of this type.
         public static final int textView=0x7f0c0045;
         public static final int textView2=0x7f0c0046;
         public static final int textView3=0x7f0c0047;
+        public static final int textView4=0x7f0c0055;
         public static final int title=0x7f0c0028;
         public static final int up=0x7f0c0009;
         public static final int useLogo=0x7f0c0013;
@@ -1466,12 +1484,13 @@ containing a value of this type.
         public static final int support_simple_spinner_dropdown_item=0x7f04001c;
     }
     public static final class mipmap {
-        public static final int ic_here_is_input_field=0x7f030000;
-        public static final int ic_next=0x7f030001;
-        public static final int ic_placeholder=0x7f030002;
-        public static final int ic_search=0x7f030003;
-        public static final int ic_search_green=0x7f030004;
-        public static final int ic_search_white=0x7f030005;
+        public static final int ic_confirm=0x7f030000;
+        public static final int ic_here_is_input_field=0x7f030001;
+        public static final int ic_next=0x7f030002;
+        public static final int ic_placeholder=0x7f030003;
+        public static final int ic_search=0x7f030004;
+        public static final int ic_search_green=0x7f030005;
+        public static final int ic_search_white=0x7f030006;
     }
     public static final class string {
         public static final int abc_action_bar_home_description=0x7f060000;

@@ -39,7 +39,6 @@
             android:screenOrientation="portrait" />
         <activity
             android:name="ua.pb.gallery.AcPreview"
-            android:launchMode="singleTop"
             android:screenOrientation="portrait" />
     </application>
 
