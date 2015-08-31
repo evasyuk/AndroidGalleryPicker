@@ -23,6 +23,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
@@ -392,7 +393,10 @@ public abstract class AcGalleryBasic extends Activity {
                     MAX_ACTION_BAR_HEIGHT = actionBar.getMeasuredHeight();
                 }
 
-                actionBar.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+                if (Build.VERSION.SDK_INT <= 15)
+                    actionBar.getViewTreeObserver().removeGlobalOnLayoutListener(this);
+                else
+                    actionBar.getViewTreeObserver().removeOnGlobalLayoutListener(this);
             }
         });
 
@@ -494,7 +498,10 @@ public abstract class AcGalleryBasic extends Activity {
                     MAX_FAB_HEIGHT = floatActionButton.getMeasuredHeight();
                 }
 
-                floatActionButton.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+                if (Build.VERSION.SDK_INT <= 15)
+                    floatActionButton.getViewTreeObserver().removeGlobalOnLayoutListener(this);
+                else
+                    floatActionButton.getViewTreeObserver().removeOnGlobalLayoutListener(this);
             }
         });
         floatActionButton.setOnClickListener(new View.OnClickListener() {

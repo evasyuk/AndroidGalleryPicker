@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -185,18 +186,19 @@ public class AcPreview extends Activity {
 
         @Override
         public boolean isViewFromObject(View view, Object object) {
-            return view == ((ImageView) object);
+            return view == ((RelativeLayout) object);
+            //return view == ((ImageView) object);
         }
 
         @Override
         public Object instantiateItem(ViewGroup container, int position) {
             Context context = activity;
 
-            //View root = LayoutInflater.from(context).inflate(R.layout.preview_view_pager_layout, container, false);
+            View root = LayoutInflater.from(context).inflate(R.layout.preview_view_pager_layout, container, false);
 
-           // ImageView imageView = (ImageView) root.findViewById(R.id.imageView6);
+            ImageView imageView = (ImageView) root.findViewById(R.id.imageView6);
 
-            ImageView imageView = new ImageView(context);
+//            ImageView imageView = new ImageView(context);
             //imageView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
 
             loadImage(Utils.FILE + list.get(position).getFileFullPath(), imageView);
@@ -215,9 +217,10 @@ public class AcPreview extends Activity {
                 }
             });
 
-            ((ViewPager) container).addView(imageView, 0);
+            //((ViewPager) container).addView(imageView, 0);
+            ((ViewPager) container).addView(root);
 
-            return imageView;
+            return root;
         }
 
         private void loadImage(String what, final ImageView where) {
@@ -257,7 +260,7 @@ public class AcPreview extends Activity {
 
         @Override
         public void destroyItem(ViewGroup container, int position, Object object) {
-            ((ViewPager) container).removeView((ImageView) object);
+            ((ViewPager) container).removeView((RelativeLayout) object);
         }
     }
 }

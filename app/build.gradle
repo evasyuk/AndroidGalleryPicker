@@ -11,7 +11,7 @@ android {
 
     defaultConfig {
         applicationId "ua.pb.gallery"
-        minSdkVersion 16
+        minSdkVersion 15
     }
 
     buildTypes {
