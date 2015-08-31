@@ -20,6 +20,7 @@ package ua.pb.gallery;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -32,6 +33,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.view.Window;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
@@ -227,7 +229,7 @@ public abstract class AcGalleryBasic extends Activity {
             Toast.makeText(this, "chosen photo path: " + data.getStringExtra(Utils.PHOTO_RESULT_PATH), Toast.LENGTH_LONG).show();
             finish();
         } else {
-            Toast.makeText(this, "result is shit", Toast.LENGTH_LONG).show();
+            //Toast.makeText(this, "result is shit", Toast.LENGTH_LONG).show();
         }
     }
 
@@ -346,7 +348,20 @@ public abstract class AcGalleryBasic extends Activity {
 
                 applyNewFABHeight(CURRENT_FAB_HEIGHT);
 
-                applySearchFieldAlpha( 1 - (float)CURRENT_FAB_HEIGHT/(float)(MAX_FAB_HEIGHT + FAB_BOTTOM_MARGIN));
+                applySearchFieldAlpha(1 - (float) CURRENT_FAB_HEIGHT / (float) (MAX_FAB_HEIGHT + FAB_BOTTOM_MARGIN));
+            }
+        });
+
+        foldersRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+
+                View view = activity.getCurrentFocus();
+                if (view != null) {
+                    InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+                    imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+                }
             }
         });
     }
@@ -521,12 +536,12 @@ public abstract class AcGalleryBasic extends Activity {
                 if (s.toString().length() > 0) {
                     if (!isFloatActionButtonGreen) {
                         isFloatActionButtonGreen = true;
-                        floatActionButton.setImageResource(R.mipmap.ic_search_green);
+                        floatActionButton.setImageResource(R.mipmap.ic_search_green_theme);
                     }
                 } else {
                     if (isFloatActionButtonGreen) {
                         isFloatActionButtonGreen = false;
-                        floatActionButton.setImageResource(R.mipmap.ic_search_white);
+                        floatActionButton.setImageResource(R.mipmap.ic_search_theme);
                     }
                 }
             }

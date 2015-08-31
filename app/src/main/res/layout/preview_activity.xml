@@ -16,7 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:id="@+id/header"
-        android:background="#010101">
+        android:background="@color/theme_color">
 
         <TextView
             android:gravity="left|center_vertical"
@@ -52,7 +52,8 @@
             android:layout_width="150dp"
             android:layout_height="56dp"
             android:layout_alignParentRight="true"
-            android:id="@+id/relativeLayout5" >
+            android:id="@+id/relativeLayout5"
+            android:visibility="gone">
 
             <RelativeLayout
                 android:layout_width="wrap_content"
@@ -155,8 +156,15 @@
             <ImageView
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
+                android:id="@+id/imageView9"
+                android:src="@mipmap/ic_circle" />
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
                 android:id="@+id/imageView8"
                 android:src="@mipmap/ic_cancel_me" />
+
         </RelativeLayout>
 
         <RelativeLayout
@@ -164,6 +172,12 @@
             android:layout_height="match_parent"
             android:id="@+id/header_overlay_right"
             android:layout_toRightOf="@+id/header_overlay_middle">
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:id="@+id/imageView11"
+                android:src="@mipmap/ic_circle" />
 
             <ImageView
                 android:layout_width="fill_parent"

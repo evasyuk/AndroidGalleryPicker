@@ -7,6 +7,7 @@ import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
@@ -190,6 +191,11 @@ public class AcPreview extends Activity {
         @Override
         public Object instantiateItem(ViewGroup container, int position) {
             Context context = activity;
+
+            //View root = LayoutInflater.from(context).inflate(R.layout.preview_view_pager_layout, container, false);
+
+           // ImageView imageView = (ImageView) root.findViewById(R.id.imageView6);
+
             ImageView imageView = new ImageView(context);
             //imageView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
 

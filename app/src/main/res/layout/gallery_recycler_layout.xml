@@ -17,7 +17,7 @@
         android:orientation="horizontal"
 
         android:layout_height="56dp"
-        android:background="#010100"
+        android:background="@color/theme_color"
         android:focusableInTouchMode="false">
 
         <RelativeLayout
@@ -93,7 +93,7 @@
         android:layout_width="76dp"
         android:layout_height="76dp"
         android:id="@+id/floatActionButton"
-        android:src="@mipmap/ic_search_white"
+        android:src="@mipmap/ic_search_theme"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:paddingBottom="20dp"
@@ -107,12 +107,12 @@
         android:layout_toLeftOf="@+id/floatActionButton"
         android:layout_marginBottom="20dp"
         android:layout_marginLeft="20dp"
-        android:visibility="gone">
+        android:visibility="visible">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#010101"
+            android:background="@color/theme_color"
             android:alpha="0.7"
             android:layout_alignTop="@+id/editText"
             android:layout_alignBottom="@+id/editText"
@@ -130,7 +130,7 @@
             android:layout_marginRight="20dp"
             android:singleLine="true"
             android:hint="Put key symbols here"
-            android:textColorHint="#5e5e5e"
+            android:textColorHint="@color/white_alpha70_color"
             android:textColor="#ffffff"
             android:paddingRight="5dp" />
 
