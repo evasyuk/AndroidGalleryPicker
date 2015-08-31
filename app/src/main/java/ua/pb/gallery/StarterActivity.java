@@ -21,23 +21,20 @@ package ua.pb.gallery;
 import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
-import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
-import com.nostra13.universalimageloader.core.assist.ImageScaleType;
-import com.nostra13.universalimageloader.core.display.SimpleBitmapDisplayer;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.TreeSet;
 
-import ua.pb.gallery.models.FolderIdem;
+import ua.pb.gallery.models.FileItemModel;
 
 public class StarterActivity extends Activity {
 
@@ -122,8 +119,8 @@ public class StarterActivity extends Activity {
         startActivityForResult(intent, Utils.REQUEST_PICK_FOLDER);
     }
 
-    private ArrayList<FolderIdem> sortByFolders(String[] arrPath) {
-        ArrayList<FolderIdem> result = new ArrayList<>();
+    private ArrayList<FileItemModel> sortByFolders(String[] arrPath) {
+        ArrayList<FileItemModel> result = new ArrayList<>();
         for (int index = 0; index < arrPath.length; index++) {
             String[] splitResult = arrPath[index].split("/");
 
@@ -138,10 +135,7 @@ public class StarterActivity extends Activity {
             }
             String folderFullPath = stringBuilder.toString();
 
-            FolderIdem folder = new FolderIdem();
-
-            folder.setFolderName(folderName);
-            folder.setFullFilePath(folderFullPath);
+            FileItemModel folder = new FileItemModel(folderFullPath, new File(folderFullPath));
 
             result.add(folder);
         }

@@ -17,12 +17,6 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".AcGalleryFolders" android:screenOrientation="portrait"
-            android:launchMode="singleTop"/>
-
-        <activity android:name=".AcGalleryPhotos" android:screenOrientation="portrait"
-            android:launchMode="singleTop"/>
-
         <activity android:name=".AcFolders" android:screenOrientation="portrait"
             android:launchMode="singleTop"/>
         <activity android:name=".AcPhotos" android:screenOrientation="portrait"
