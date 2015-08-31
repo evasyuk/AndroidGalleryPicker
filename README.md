@@ -1,7 +1,14 @@
 # GalleryPicker
 GaleeryPicker allows to pick up photo previously sorted by folders. 
-
-
+ 
+![alt tag](https://github.com/evasyuk/GalleryPicker/blob/master/screenshots/Screenshot_2015-08-31-12-15-39.png)
+![alt tag](https://github.com/evasyuk/GalleryPicker/blob/master/screenshotsScreenshot_2015-08-31-23-06-48.png)
+![alt tag](https://github.com/evasyuk/GalleryPicker/blob/master/screenshotsScreenshot_2015-08-31-23-07-00.png)
+![alt tag](https://github.com/evasyuk/GalleryPicker/blob/master/screenshotsScreenshot_2015-08-31-23-07-14.png)
+![alt tag](https://github.com/evasyuk/GalleryPicker/blob/master/screenshotsScreenshot_2015-08-31-23-07-22.png)
+![alt tag](https://github.com/evasyuk/GalleryPicker/blob/master/screenshotsScreenshot_2015-08-31-23-07-26.png)
+![alt tag](https://github.com/evasyuk/GalleryPicker/blob/master/screenshotsScreenshot_2015-08-31-23-07-46.png)
+ 
  
 Added:
 - filtering
