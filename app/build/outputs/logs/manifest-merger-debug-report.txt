@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/user/StudioProjects/gallery/app/src/main/AndroidManifest.xml:2:1-36:12
+ADDED from /home/user/StudioProjects/gallery/app/src/main/AndroidManifest.xml:2:1-37:12
 	xmlns:android
 		ADDED from /home/user/StudioProjects/gallery/app/src/main/AndroidManifest.xml:2:11-69
 	package
@@ -28,7 +28,7 @@ ADDED from /home/user/StudioProjects/gallery/app/src/main/AndroidManifest.xml:8:
 	android:name
 		ADDED from /home/user/StudioProjects/gallery/app/src/main/AndroidManifest.xml:8:22-77
 application
-ADDED from /home/user/StudioProjects/gallery/app/src/main/AndroidManifest.xml:10:5-35:19
+ADDED from /home/user/StudioProjects/gallery/app/src/main/AndroidManifest.xml:10:5-36:19
 MERGED from [com.android.support:appcompat-v7:22.0.0] /home/user/StudioProjects/gallery/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:support-v4:22.2.1] /home/user/StudioProjects/gallery/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.1/AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:support-v4:22.2.1] /home/user/StudioProjects/gallery/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.1/AndroidManifest.xml:22:5-20
@@ -87,8 +87,10 @@ ADDED from /home/user/StudioProjects/gallery/app/src/main/AndroidManifest.xml:28
 	android:launchMode
 		ADDED from /home/user/StudioProjects/gallery/app/src/main/AndroidManifest.xml:29:13-43
 activity#ua.pb.gallery.AcPreview
-ADDED from /home/user/StudioProjects/gallery/app/src/main/AndroidManifest.xml:31:9-32:16
+ADDED from /home/user/StudioProjects/gallery/app/src/main/AndroidManifest.xml:31:9-33:16
 	android:screenOrientation
 		ADDED from /home/user/StudioProjects/gallery/app/src/main/AndroidManifest.xml:31:45-81
 	android:name
 		ADDED from /home/user/StudioProjects/gallery/app/src/main/AndroidManifest.xml:31:19-44
+	android:launchMode
+		ADDED from /home/user/StudioProjects/gallery/app/src/main/AndroidManifest.xml:32:13-43

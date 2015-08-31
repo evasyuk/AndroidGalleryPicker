@@ -31,7 +31,13 @@ import com.nostra13.universalimageloader.core.display.SimpleBitmapDisplayer;
  */
 public class Utils {
 
+
+    public static boolean BUG_WITH_ON_ACTIVITY_RESULT = false;
+
+
     public static final String FOLDERS_KEY = "FOLDERS_KEY_";
+
+    public static final String IS_FOLDER_MODE_KEY = "IS_FOLDER_MODE_KEY";
 
     public static final String FILE = "file://";
     public static final String DRAWABLE = "drawable://";

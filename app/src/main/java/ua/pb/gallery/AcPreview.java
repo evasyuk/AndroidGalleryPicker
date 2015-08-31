@@ -142,8 +142,18 @@ public class AcPreview extends Activity {
         int currentPhotoIndex = viewPager.getCurrentItem();
         String result = photosString.get(currentPhotoIndex);
 
-        Intent intent = getIntent();
+        Intent intent = new Intent(AcPreview.this, AcPhotos.class);
         intent.putExtra(Utils.PHOTO_RESULT_PATH, result);
+
+        Bundle bundle = new Bundle();
+        bundle.putString(Utils.PHOTO_RESULT_PATH, result);
+        intent.putExtras(bundle);
+
+        if (Utils.BUG_WITH_ON_ACTIVITY_RESULT) {
+            startActivity(intent);
+            finish();
+        }
+
         setResult(Utils.RESULT_PICK_IMAGE_OK, intent);
         finish();
     }

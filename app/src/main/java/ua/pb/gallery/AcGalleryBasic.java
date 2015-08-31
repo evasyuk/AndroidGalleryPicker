@@ -48,19 +48,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ua.pb.gallery.adapters.FilterInterface;
-import ua.pb.gallery.adapters.GalleryFoldersRecyclerAdapter;
 import ua.pb.gallery.adapters.GenericAdapter;
 import ua.pb.gallery.models.FileItemModel;
-import ua.pb.gallery.models.FolderEntity;
 
 /**
  * Created by user on 29.08.15.
  */
 public abstract class AcGalleryBasic extends Activity {
 
-    public static final String FOLDERS_KEY = "FOLDERS_KEY_";
-
-    public static final String IS_FOLDER_MODE_KEY = "IS_FOLDER_MODE_KEY";
 
     private RecyclerView foldersRecyclerView;
     private GridLayoutManager gridLayoutManager;
@@ -89,6 +84,32 @@ public abstract class AcGalleryBasic extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        if (Utils.BUG_WITH_ON_ACTIVITY_RESULT) {
+            if (getIntent() != null) {
+                String result = getIntent().getStringExtra(Utils.PHOTO_RESULT_PATH);
+                if (result == null) {
+                    android.util.Log.e("INTENT BUG", "result == null, but hasn't to");
+                    if (getIntent().getExtras() == null) {
+                        android.util.Log.e("INTENT BUG", "bitch! there is no extras! but has to be!");
+                    } else {
+                        String result2 = getIntent().getExtras().getString(Utils.PHOTO_RESULT_PATH);
+                        if (result2 != null) {
+                            android.util.Log.e("INTENT BUG", "OK, path: " + result2);
+                            setResult(Utils.RESULT_PICK_IMAGE_OK, getIntent());
+                            finish();
+                        } else {
+                            android.util.Log.e("INTENT BUG", "resulted String s NULL - thi is an ERROR");
+                        }
+                    }
+                } else {
+                    setResult(Utils.RESULT_PICK_IMAGE_OK, getIntent());
+                    finish();
+                }
+            } else {
+                android.util.Log.e("INTENT BUG","intetn is NULL, but hasn't to");
+            }
+        }
+
         getWindow().requestFeature(Window.FEATURE_ACTION_BAR);
         getActionBar().hide();
 
@@ -106,10 +127,10 @@ public abstract class AcGalleryBasic extends Activity {
         } else {
             Bundle bundle = receivedIntent.getExtras();
 
-            boolean isFolderMode = bundle.getBoolean(IS_FOLDER_MODE_KEY, true);
+            boolean isFolderMode = bundle.getBoolean(Utils.IS_FOLDER_MODE_KEY, true);
 
             if (isFolderMode) {
-                ArrayList<String> foldersList = bundle.getStringArrayList(FOLDERS_KEY);
+                ArrayList<String> foldersList = bundle.getStringArrayList(Utils.FOLDERS_KEY);
                 if (foldersList == null) {
                     showDialogAndDismiss("bundle.getStringArrayList(FOLDERS_KEY) == null");
                 } else {
@@ -154,7 +175,7 @@ public abstract class AcGalleryBasic extends Activity {
                                 }
                             }
 
-                            imageChosen2(photos2, chosenPhoto);
+                            startAcPreview(photos2, chosenPhoto);
                         }
                     });
                 } else {
@@ -183,6 +204,20 @@ public abstract class AcGalleryBasic extends Activity {
         }
     }
 
+    // TODO: FIX BUG
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+
+        android.util.Log.e("INTENT_BUG","intent.getStringExtra(Utils.PHOTO_RESULT_PATH) is " + (intent.getStringExtra(Utils.PHOTO_RESULT_PATH) == null ? "null" : "not null"));
+
+        if (intent != null) {
+            Log.d("StarterActivity", "chosen photo path: " + intent.getStringExtra(Utils.PHOTO_RESULT_PATH));
+            Toast.makeText(this, "chosen photo path: " + intent.getStringExtra(Utils.PHOTO_RESULT_PATH), Toast.LENGTH_LONG).show();
+            finish();
+        }
+    }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         Log.d("StarterActivity", "requestCode " + requestCode + "; resultCode " + requestCode);
@@ -202,17 +237,6 @@ public abstract class AcGalleryBasic extends Activity {
         setResult(Utils.RESULT_PICK_IMAGE_OK, intent);
         finish();
     }
-
-    private void imageChosen2(ArrayList<String> photos, int chosenPhoto) {
-        Intent intent = new Intent(AcGalleryBasic.this, AcPreview.class);
-
-        intent.putExtra(AcPreview.CHOSEN_PHOTO, chosenPhoto);
-        intent.putExtra(Utils.FOLDERS_KEY, photos);
-        //setResult(Utils.RESULT_PICK_IMAGE_OK, intent);
-        startActivityForResult(intent, Utils.RESULT_PICK_IMAGE_OK);
-        finish();
-    }
-
     private ArrayList<FileItemModel> getPhotos(String fodlerPath) {
         File folder = new File(fodlerPath);
         File[] photos = folder.listFiles(picturesfilter);
@@ -226,11 +250,20 @@ public abstract class AcGalleryBasic extends Activity {
         return result;
     }
 
+    private void startAcPreview(ArrayList<String> photos, int chosenPhoto) {
+        Intent intent = new Intent(AcGalleryBasic.this, AcPreview.class);
+
+        intent.putExtra(AcPreview.CHOSEN_PHOTO, chosenPhoto);
+        intent.putExtra(Utils.FOLDERS_KEY, photos);
+        //setResult(Utils.RESULT_PICK_IMAGE_OK, intent);
+        startActivityForResult(intent, Utils.RESULT_PICK_IMAGE_OK);
+
+    }
     private void startAcGalleryPhoto(String folderPath) {
-        Intent startAcGalleryPhoto = new Intent(AcGalleryBasic.this, AcPhotos.class);
+        Intent startAcGalleryPhoto = new Intent(this, AcPhotos.class);
 
         startAcGalleryPhoto.putExtra(Utils.PHOTO_KEY, folderPath);
-        startAcGalleryPhoto.putExtra(IS_FOLDER_MODE_KEY, false);
+        startAcGalleryPhoto.putExtra(Utils.IS_FOLDER_MODE_KEY, false);
 
         startActivityForResult(startAcGalleryPhoto, Utils.REQUEST_PICK_IMAGE);
     }
