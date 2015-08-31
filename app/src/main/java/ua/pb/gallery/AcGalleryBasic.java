@@ -357,7 +357,7 @@ public abstract class AcGalleryBasic extends Activity {
     //---------------------------------------------------------------------------------------------/
     private LinearLayout actionBar;
     private TextView actionBarTitle;
-    private ImageView backButton;
+    private RelativeLayout backButtonWrapper;
     private int CURRENT_ACTION_BAR_HEIGHT;
     private int MAX_ACTION_BAR_HEIGHT;
     private void applyNewMargin(int height) {
@@ -384,8 +384,8 @@ public abstract class AcGalleryBasic extends Activity {
         actionBarTitle = (TextView) findViewById(R.id.actionBarTitle);
         actionBarTitle.setText(isFolderMode ? "Folders" : "Photos");
 
-        backButton = (ImageView) findViewById(R.id.ivBack);
-        backButton.setOnClickListener(new View.OnClickListener() {
+        backButtonWrapper = (RelativeLayout) findViewById(R.id.ivBackWrapper);
+        backButtonWrapper.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onBackPressed();
@@ -401,6 +401,13 @@ public abstract class AcGalleryBasic extends Activity {
             @Override
             public void onClick(View v) {
                 isDualSpan = !isDualSpan;
+
+                if (isDualSpan){
+                    changeGrid.setImageResource(R.mipmap.ic_tile33);
+                } else {
+                    changeGrid.setImageResource(R.mipmap.ic_tile22);
+                }
+
                 createRecyclerView(list, isDualSpan);
             }
         });
@@ -426,8 +433,8 @@ public abstract class AcGalleryBasic extends Activity {
     private void setupSpinner() {
         spinner = (Spinner) findViewById(R.id.spinner);
         List<String> list = new ArrayList<String>();
-        list.add("Alphabetic");
         list.add("Time");
+        list.add("Alphabetic");
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item, list);
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -439,9 +446,9 @@ public abstract class AcGalleryBasic extends Activity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 if (position == currentlyChosen)
                     return;
-                if (position == 0) {
+                if (position == 1) {
                     recyclerAdapter.sortAlphabeticAscending();
-                } else if (position == 1) {
+                } else if (position == 0) {
                     recyclerAdapter.sortTimeAsceniding();
                 }
                 currentlyChosen = position;

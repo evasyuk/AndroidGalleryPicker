@@ -106,6 +106,8 @@ public class GenericAdapter extends RecyclerView.Adapter<GenericAdapter.FileItem
         this.filteredList = originList;
         this.activity = activity;
         this.isFolderMode = isFolderMode;
+
+        sortTimeAsceniding();
     }
 
     private FilenameFilter picturesfilter = new FilenameFilter() {//todo: extend file filter

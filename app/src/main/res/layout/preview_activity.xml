@@ -36,7 +36,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/back_button_wrapper"
-            android:layout_marginRight="15dp">
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp">
 
             <ImageView
                 android:layout_height="fill_parent"
@@ -44,9 +45,49 @@
                 android:id="@+id/imageView3"
                 android:src="@drawable/abc_ic_ab_back_mtrl_am_alpha"
                 android:layout_gravity="center_vertical"
-                android:layout_marginLeft="15dp"
-                android:adjustViewBounds="false"
-                android:layout_marginRight="-15dp" />
+                android:adjustViewBounds="false" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="150dp"
+            android:layout_height="56dp"
+            android:layout_alignParentRight="true"
+            android:id="@+id/relativeLayout5" >
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/relativeLayout2"
+                android:layout_centerInParent="true" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/relativeLayout3"
+                android:layout_toLeftOf="@+id/relativeLayout2" >
+
+                <ImageView
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:id="@+id/imageView10"
+                    android:src="@mipmap/ic_circle" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/relativeLayout4"
+                android:layout_toRightOf="@+id/relativeLayout2"
+                android:padding="1dp">
+
+                <ImageView
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:id="@+id/imageView12"
+                    android:src="@mipmap/ic_circle" />
+
+            </RelativeLayout>
         </RelativeLayout>
     </ua.pb.gallery.widget.AnimatingRelativeLayout>
 
@@ -114,8 +155,8 @@
             <ImageView
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:id="@+id/imageView6"
-                android:src="@drawable/abc_ic_clear_mtrl_alpha" />
+                android:id="@+id/imageView8"
+                android:src="@mipmap/ic_cancel_me" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -128,7 +169,8 @@
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:id="@+id/imageView7"
-                android:src="@mipmap/ic_confirm" />
+                android:src="@mipmap/ic_confirm_me" />
+
         </RelativeLayout>
     </RelativeLayout>
 
